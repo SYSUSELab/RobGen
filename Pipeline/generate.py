@@ -27,10 +27,18 @@ signature_datas={task["question_id"]: task["signature"] for task in stream_jsonl
 datas = json.load(open("Pipeline/CoderEval4Java.json", encoding='utf-8'))
 contexts={data["_id"]:json.loads(data["all_context"])["class_level"] for data in datas["RECORDS"]}
 
+if(Adjust):
+    Adj_suffix="_Adj"
+else:
+    Adj_suffix=""
 
+if(Insert):
+    Ins_suffix="_Ins"
+else:
+    Ins_suffix=""
 
 start=time.time()
-write_jsonl(model_name.replace("/","-")+".jsonl", "")
+write_jsonl(model_name.replace("/","-")+Adj_suffix+Ins_suffix+".jsonl", "")
 
 for data in tqdm(datas["RECORDS"]) :
     id=data["_id"]
@@ -40,7 +48,7 @@ for data in tqdm(datas["RECORDS"]) :
     generate_result=pipeline(model_name,tokenizer,model,context,signature_data,input,Adjust,Insert)
     print(generate_result)
     sample=[dict(_id=id,generate_results=generate_result)]
-    write_jsonl(model_name.replace("/","-")+".jsonl", sample,append=True)
+    write_jsonl(model_name.replace("/","-")+Adj_suffix+Ins_suffix+".jsonl", sample,append=True)
 
 
 end=time.time()
