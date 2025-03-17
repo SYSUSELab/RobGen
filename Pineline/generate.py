@@ -41,7 +41,7 @@ for data in tqdm(datas["RECORDS"]) :
     print(generate_result)
     sample=[dict(_id=id,generate_results=generate_result)]
     write_jsonl(model_name.replace("/","-")+".jsonl", sample,append=True)
-    break
+
 
 end=time.time()
 print("time: ",(end-start)/60,"min")
