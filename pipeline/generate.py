@@ -30,7 +30,7 @@ contexts={data["_id"]:json.loads(data["all_context"])["class_level"] for data in
 
 
 start=time.time()
-write_jsonl("Pipeline/"+model_name.replace("/","-")+".jsonl", "")
+write_jsonl(model_name.replace("/","-")+".jsonl", "")
 
 for data in tqdm(datas["RECORDS"]) :
     id=data["_id"]
@@ -40,7 +40,7 @@ for data in tqdm(datas["RECORDS"]) :
     generate_result=pipeline(model_name,tokenizer,model,context,signature_data,input,Adjust,Insert)
     print(generate_result)
     sample=[dict(_id=id,generate_results=generate_result)]
-    write_jsonl("Pipeline/"+model_name.replace("/","-")+".jsonl", sample,append=True)
+    write_jsonl(model_name.replace("/","-")+".jsonl", sample,append=True)
     break
 
 end=time.time()
