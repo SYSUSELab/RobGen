@@ -1,4 +1,4 @@
-# RobGen
+## RobGen
 
 Before testing RobGen, please configure the environment using conda first.
 
