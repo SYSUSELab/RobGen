@@ -13,20 +13,12 @@ pip install torch
 #### Test Robgen
 ```
 cd yourpath/RobGen
-```
-If you want to use RobGen-Adj, run:
-```
+###If you want to use RobGen-Adj, run:
 python Pipeline/generate.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct) --Adjust 
-```
-If you want to use RobGen-Ins, run:
-```
+###If you want to use RobGen-Ins, run:
 python Pipeline/generate.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct) --Insert 
-```
-If you want to use RobGen-Adj+Ins, run:
-```
+###If you want to use RobGen-Adj+Ins, run:
 python Pipeline/generate.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct) --Adjust --Insert 
-```
-run w/o RobGen:
-```
+###run w/o RobGen:
 python Pipeline/generate.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct)
 ```
