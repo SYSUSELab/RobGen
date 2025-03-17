@@ -10,7 +10,7 @@ pip install tree_sitter_java
 pip install transformers
 pip install torch
 ```
-#### Test Robgen
+#### Test RobGen
 ```
 cd yourpath/RobGen
 
