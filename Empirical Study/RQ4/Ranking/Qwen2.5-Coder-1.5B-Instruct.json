@@ -1,0 +1,424 @@
+{
+     "datas": [
+          {
+               "id": "6367670b1a6d9265ec017a00",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public static boolean isSameLength(final byte[] array1,final byte[] array2){\n    return array1.length == array2.length;\n}",
+               "ground_true": "public static boolean isSameLength(final byte[] array1,final byte[] array2){\n  if (array1 == null && array2 != null && array2.length > 0 || array2 == null && array1 != null && array1.length > 0 || array1 != null && array2 != null && array1.length != array2.length) {\n    return false;\n  }\n  return true;\n}\n"
+          },
+          {
+               "id": "636767031a6d9265ec0178e6",
+               "token_pos": 13,
+               "ranking": 3,
+               "generate_code": "public static byte[] toPrimitive(final Byte[] array){\n    if(array == null){\n        return null;\n    }\n    final byte[] primitives = new byte[array.length];\n    for(int i = 0; i < array.length; i++){\n        primitives[i] = array[i].byteValue();\n    }\n    return primitives;\n}",
+               "ground_true": "public static byte[] toPrimitive(final Byte[] array){\n  if (array == null) {\n    return null;\n  }\n else   if (array.length == 0) {\n    return ArrayUtils.EMPTY_BYTE_ARRAY;\n  }\n  final byte[] result=new byte[array.length];\n  for (int i=0; i < array.length; i++) {\n    result[i]=array[i].byteValue();\n  }\n  return result;\n}\n"
+          },
+          {
+               "id": "636766ff1a6d9265ec017842",
+               "token_pos": 17,
+               "ranking": 6,
+               "generate_code": "public static double[] toPrimitive(final Double[] array){\n    if(array.length == 0){\n        return EMPTY_DOUBLE_ARRAY;\n    }\n    final double[] result = new double[array.length];\n    for(int i = 0; i < array.length; i++){\n        result[i] = array[i].doubleValue();\n    }\n    return result;\n}",
+               "ground_true": "public static double[] toPrimitive(final Double[] array){\n  if (array == null) {\n    return null;\n  }\n else   if (array.length == 0) {\n    return ArrayUtils.EMPTY_DOUBLE_ARRAY;\n  }\n  final double[] result=new double[array.length];\n  for (int i=0; i < array.length; i++) {\n    result[i]=array[i].doubleValue();\n  }\n  return result;\n}\n"
+          },
+          {
+               "id": "636766fa1a6d9265ec017796",
+               "token_pos": 13,
+               "ranking": 3,
+               "generate_code": "public static Boolean[] toObject(final boolean[] array){\n    if(array == null){\n        return null;\n    }\n    final Boolean[] result = new Boolean[array.length];\n    for(int i = 0; i < array.length; i++){\n        result[i] = array[i];\n    }\n    return result;\n}",
+               "ground_true": "public static Boolean[] toObject(final boolean[] array){\n  if (array == null) {\n    return null;\n  }\n else   if (array.length == 0) {\n    return ArrayUtils.EMPTY_BOOLEAN_OBJECT_ARRAY;\n  }\n  final Boolean[] result=new Boolean[array.length];\n  for (int i=0; i < array.length; i++) {\n    result[i]=array[i] ? Boolean.TRUE : Boolean.FALSE;\n  }\n  return result;\n}\n"
+          },
+          {
+               "id": "6367670a1a6d9265ec0179f1",
+               "token_pos": 13,
+               "ranking": 3,
+               "generate_code": "public static Short[] toObject(final short[] array){\n    if(array == null){\n        return null;\n    }\n    final Short[] result = new Short[array.length];\n    for(int i = 0; i < array.length; i++){\n        result[i] = Short.valueOf(array[i]);\n    }\n    return result;\n}",
+               "ground_true": "public static Short[] toObject(final short[] array){\n  if (array == null) {\n    return null;\n  }\n else   if (array.length == 0) {\n    return ArrayUtils.EMPTY_SHORT_OBJECT_ARRAY;\n  }\n  final Short[] result=new Short[array.length];\n  for (int i=0; i < array.length; i++) {\n    result[i]=new Short(array[i]);\n  }\n  return result;\n}\n"
+          },
+          {
+               "id": "636767041a6d9265ec01790f",
+               "token_pos": 13,
+               "ranking": 3,
+               "generate_code": "public static Integer[] toObject(final int[] array){\n    if(array == null){\n        return null;\n    }\n    final Integer[] result = new Integer[array.length];\n    for(int i = 0; i < array.length; i++){\n        result[i] = Integer.valueOf(array[i]);\n    }\n    return result;\n}",
+               "ground_true": "public static Integer[] toObject(final int[] array){\n  if (array == null) {\n    return null;\n  }\n else   if (array.length == 0) {\n    return ArrayUtils.EMPTY_INTEGER_OBJECT_ARRAY;\n  }\n  final Integer[] result=new Integer[array.length];\n  for (int i=0; i < array.length; i++) {\n    result[i]=new Integer(array[i]);\n  }\n  return result;\n}\n"
+          },
+          {
+               "id": "636766fa1a6d9265ec0177a4",
+               "token_pos": 13,
+               "ranking": 3,
+               "generate_code": "public static Double[] toObject(final double[] array){\n    if(array == null){\n        return null;\n    }\n    final Double[] result = new Double[array.length];\n    for(int i = 0; i < array.length; i++){\n        result[i] = Double.valueOf(array[i]);\n    }\n    return result;\n}",
+               "ground_true": "public static Double[] toObject(final double[] array){\n  if (array == null) {\n    return null;\n  }\n else   if (array.length == 0) {\n    return ArrayUtils.EMPTY_DOUBLE_OBJECT_ARRAY;\n  }\n  final Double[] result=new Double[array.length];\n  for (int i=0; i < array.length; i++) {\n    result[i]=new Double(array[i]);\n  }\n  return result;\n}\n"
+          },
+          {
+               "id": "636766fe1a6d9265ec01781c",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public static Character toCharacterObject(final char ch){\n    return Character.valueOf(ch);\n}",
+               "ground_true": "public static Character toCharacterObject(final char ch){\n  if (ch < CharUtils.CHAR_ARRAY.length) {\n    return CharUtils.CHAR_ARRAY[ch];\n  }\n  return new Character(ch);\n}\n"
+          },
+          {
+               "id": "636766f81a6d9265ec017748",
+               "token_pos": 1,
+               "ranking": 4,
+               "generate_code": "public static String base64Decode(final String s){\n    return new String(base64DecodeToArray(s),StandardCharsets.UTF_8);\n}",
+               "ground_true": "public static String base64Decode(final String s){\n  byte[] b=Base64.base64DecodeToArray(s);\n  if (b == null) {\n    return null;\n  }\n  if (b.length == 0) {\n    return \"\";\n  }\n  return new String(b,StandardCharsets.UTF_8);\n}\n"
+          },
+          {
+               "id": "636766f31a6d9265ec01768f",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public static char[] clone(final char[] array){\n    return array.clone();\n}",
+               "ground_true": "public static char[] clone(final char[] array){\n  if (array == null) {\n    return null;\n  }\n  return array.clone();\n}\n"
+          },
+          {
+               "id": "6367670b1a6d9265ec017a05",
+               "token_pos": 1,
+               "ranking": 3,
+               "generate_code": "public static String toString(final char ch){\n    return new String(new char[]{ch});\n}",
+               "ground_true": "public static String toString(final char ch){\n  if (ch < 128) {\n    return CharUtils.CHAR_STRING_ARRAY[ch];\n  }\n  return new String(new char[]{ch});\n}\n"
+          },
+          {
+               "id": "636767061a6d9265ec01794a",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public static int indexOfExtension(String filename){\n    int extensionPos = filename.lastIndexOf(EXTENSION_SEPARATOR);\n    int lastSeparator = indexOfLastSeparator(filename);\n    return lastSeparator > extensionPos ? -1 : extensionPos;\n}",
+               "ground_true": "public static int indexOfExtension(String filename){\n  if (filename == null) {\n    return -1;\n  }\n  int extensionPos=filename.lastIndexOf(EXTENSION_SEPARATOR);\n  int lastSeparator=indexOfLastSeparator(filename);\n  return lastSeparator > extensionPos ? -1 : extensionPos;\n}\n"
+          },
+          {
+               "id": "636767001a6d9265ec01787e",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public String toString(){\n    return this.toString(this.buffer, this.style, this.outputTransients, this.outputStatics, this.upToClass);\n}",
+               "ground_true": "public String toString(){\n  if (this.getObject() == null) {\n    return this.getStyle().getNullText();\n  }\n  Class<?> clazz=this.getObject().getClass();\n  this.appendFieldsIn(clazz);\n  while (clazz.getSuperclass() != null && clazz != this.getUpToClass()) {\n    clazz=clazz.getSuperclass();\n    this.appendFieldsIn(clazz);\n  }\n  return super.toString();\n}\n"
+          },
+          {
+               "id": "636767041a6d9265ec017911",
+               "token_pos": 9,
+               "ranking": 2,
+               "generate_code": "static void register(Object value){\n    if (value != null) {\n        REGISTRY.set(value);\n    }\n}",
+               "ground_true": "static void register(Object value){\n  if (value != null) {\n    Map m=getRegistry();\n    if (m == null) {\n      m=new WeakHashMap();\n      REGISTRY.set(m);\n    }\n    m.put(value,null);\n  }\n}\n"
+          },
+          {
+               "id": "636766f11a6d9265ec017641",
+               "token_pos": 9,
+               "ranking": 3,
+               "generate_code": "@Override public int available() throws IOException {\n    if (index >= length) {\n        return 0;\n    }\n    return length - index;\n}",
+               "ground_true": "@Override public int available() throws IOException {\n  return this.index < this.length ? this.length - this.index : this.length >= 0 && this.reader.ready() ? 1 : 0;\n}\n"
+          },
+          {
+               "id": "6367670b1a6d9265ec0179f2",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "@Override public boolean containsKey(final Object key){\n    return map.containsKey(key);\n}",
+               "ground_true": "@Override public boolean containsKey(final Object key){\n  if (this.fast) {\n    return this.map.containsKey(key);\n  }\n else {\nsynchronized (this.map) {\n      return this.map.containsKey(key);\n    }\n  }\n}\n"
+          },
+          {
+               "id": "636767021a6d9265ec0178bc",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public static int indexOf(String str,String searchStr){\n    return str.indexOf(searchStr);\n}",
+               "ground_true": "public static int indexOf(String str,String searchStr){\n  if (str == null || searchStr == null) {\n    return StringUtils.INDEX_NOT_FOUND;\n  }\n  return str.indexOf(searchStr);\n}\n"
+          },
+          {
+               "id": "636767031a6d9265ec0178ef",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "private static Object copyArrayGrow1(final Object array,final Class<?> newArrayComponentType){\n    final int length = Array.getLength(array);\n    final Object newArray = Array.newInstance(newArrayComponentType,length+1);\n    System.arraycopy(array,0,newArray,0,length);\n    Array.set(newArray,length,newArrayComponentType.getConstructor().newInstance());\n    return newArray;\n}",
+               "ground_true": "private static Object copyArrayGrow1(final Object array,final Class<?> newArrayComponentType){\n  if (array != null) {\n    int arrayLength=Array.getLength(array);\n    Object newArray=Array.newInstance(array.getClass().getComponentType(),arrayLength + 1);\n    System.arraycopy(array,0,newArray,0,arrayLength);\n    return newArray;\n  }\n  return Array.newInstance(newArrayComponentType,1);\n}\n"
+          },
+          {
+               "id": "636767501a6d9265ec017e86",
+               "token_pos": 1,
+               "ranking": 3,
+               "generate_code": "@Override public ListNode<E> previousNode(){\n    return this.prev;\n}",
+               "ground_true": "@Override public ListNode<E> previousNode(){\n  checkForComodification();\n  if (!hasPrevious()) {\n    throw new NoSuchElementException();\n  }\n  last=next=next.prev;\n  nextIndex--;\n  return last;\n}\n"
+          },
+          {
+               "id": "636767631a6d9265ec018171",
+               "token_pos": 21,
+               "ranking": 3,
+               "generate_code": "private boolean unlink(ListNodeImpl<E> node){\n    ListNodeImpl<E> prev = node.prev;\n    ListNodeImpl<E> next = node.next;\n    prev.next = next;\n    next.prev = prev;\n    node.prev = null;\n    node.next = null;\n    size--;\n    node.value = null;\n    expectedModCount++;\n    return true;\n}",
+               "ground_true": "private boolean unlink(ListNodeImpl<E> node){\n  ListNodeImpl<E> prev=node.prev;\n  ListNodeImpl<E> next=node.next;\n  if (removeListNode(node)) {\n    if (size == 0) {\n      head=null;\n    }\n else {\n      link(prev,next);\n      if (head == node) {\n        head=next;\n      }\n    }\n    return true;\n  }\n  return false;\n}\n"
+          },
+          {
+               "id": "636767561a6d9265ec017f63",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "@Override public boolean hasNext(){\n    return !isEmpty();\n}",
+               "ground_true": "@Override public boolean hasNext(){\n  if (current != null) {\n    return true;\n  }\n  current=advance();\n  if (current != null && nListeners != 0) {\n    fireVertexTraversed(createVertexTraversalEvent(current));\n  }\n  return current != null;\n}\n"
+          },
+          {
+               "id": "6367675a1a6d9265ec018010",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "void removeSelf(){\n    prev.next = next;\n    next.prev = prev;\n}",
+               "ground_true": "void removeSelf(){\n  if (next != null) {\n    next.prev=prev;\n  }\n  if (prev != null) {\n    prev.next=next;\n  }\n}\n"
+          },
+          {
+               "id": "6367674b1a6d9265ec017dc0",
+               "token_pos": 45,
+               "ranking": 2,
+               "generate_code": "private Set<V> initVisibleVertices(){\n    Set<V> visibleVertices = new HashSet<V>();\n    for (E e : graph.edgeSet()) {\n        V v1 = graph.getEdgeSource(e);\n        V v2 = graph.getEdgeTarget(e);\n        visibleVertices.add(v1);\n        visibleVertices.add(v2);\n    }\n    return visibleVertices;\n}",
+               "ground_true": "private Set<V> initVisibleVertices(){\n  Set<V> visibleVertex=new HashSet<>();\n  for (  E e : graph.edgeSet()) {\n    V s=graph.getEdgeSource(e);\n    V t=graph.getEdgeTarget(e);\n    if (!s.equals(t)) {\n      visibleVertex.add(s);\n      visibleVertex.add(t);\n    }\n  }\n  return visibleVertex;\n}\n"
+          },
+          {
+               "id": "636767531a6d9265ec017ef1",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public static boolean equals(Point2D p1,Point2D p2){\n    return TOLERANCE_DOUBLE_COMPARATOR.equals(p1,p2);\n}",
+               "ground_true": "public static boolean equals(Point2D p1,Point2D p2){\n  int xEquals=TOLERANCE_DOUBLE_COMPARATOR.compare(p1.getX(),p2.getX());\n  if (xEquals != 0) {\n    return false;\n  }\n  return TOLERANCE_DOUBLE_COMPARATOR.compare(p1.getY(),p2.getY()) == 0;\n}\n"
+          },
+          {
+               "id": "636767431a6d9265ec017c8d",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "private int computeBinaryLog(int n){\n    int log = 0;\n    while (n > 1) {\n        n = n >> 1;\n        log++;\n    }\n    return log;\n}",
+               "ground_true": "private int computeBinaryLog(int n){\n  assert n >= 0;\n  int result=0;\n  while (n > 0) {\n    n>>=1;\n    ++result;\n  }\n  return result;\n}\n"
+          },
+          {
+               "id": "636767641a6d9265ec018190",
+               "token_pos": 1,
+               "ranking": 7,
+               "generate_code": "private void reload(List<Set<Integer>> bucketsByLabel,List<Integer> labels,int minLabel){\n    for(int i=0;i<bucketsByLabel.size();i++){\n        Set<Integer> bucket=bucketsByLabel.get(i);\n        if(i==minLabel){\n            for(Integer vertex:bucket){\n                labels.set(vertex,0);\n            }\n            bucketsByLabel.set(i,new HashSet<Integer>());\n        }else{\n            for(Integer vertex:bucket){\n                labels.set(vertex,i);\n            }\n            bucketsByLabel.set(i,new HashSet<Integer>());\n        }\n    }\n}",
+               "ground_true": "private void reload(List<Set<Integer>> bucketsByLabel,List<Integer> labels,int minLabel){\n  if (minLabel != 0 && minLabel < bucketsByLabel.size()) {\n    Set<Integer> bucket=bucketsByLabel.get(minLabel);\n    for (    Integer vertex : bucket) {\n      labels.set(vertex,0);\n      bucketsByLabel.get(0).add(vertex);\n    }\n    bucket.clear();\n  }\n}\n"
+          },
+          {
+               "id": "636767601a6d9265ec0180e2",
+               "token_pos": 32,
+               "ranking": 2,
+               "generate_code": "private List<Pair<List<Pair<Integer,Integer>>,E>> computeGlobalSeparatorList(){\n    List<Pair<List<Pair<Integer,Integer>>,E>> separators = new ArrayList<Pair<List<Pair<Integer,Integer>>,E>>();\n    for(E edge : graph.edgeSet()){\n        List<Pair<Integer,Integer>> separatorsOfEdge = getSeparator(graph,edge);\n        separators.add(new Pair<List<Pair<Integer,Integer>>,E>(separatorsOfEdge,edge));\n    }\n    return separators;\n}",
+               "ground_true": "private List<Pair<List<Pair<Integer,Integer>>,E>> computeGlobalSeparatorList(){\n  List<Pair<List<Pair<Integer,Integer>>,E>> globalSeparatorList=new ArrayList<>();\n  for (  E edge : graph.edgeSet()) {\n    V source=graph.getEdgeSource(edge);\n    V target=graph.getEdgeTarget(edge);\n    if (source != target) {\n      List<Set<V>> edgeSeparators=findSeparators(graph,edge);\n      globalSeparatorList.addAll(reformatSeparatorList(edgeSeparators,edge));\n    }\n  }\n  return globalSeparatorList;\n}\n"
+          },
+          {
+               "id": "636767511a6d9265ec017eb0",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public int nonZeros(int row){\n    return rowOffsets[row+1]-rowOffsets[row];\n}",
+               "ground_true": "public int nonZeros(int row){\n  assert row >= 0 && row < rowOffsets.length;\n  return rowOffsets[row + 1] - rowOffsets[row];\n}\n"
+          },
+          {
+               "id": "636767461a6d9265ec017d17",
+               "token_pos": 0,
+               "ranking": 6,
+               "generate_code": "private String unescapeId(String input){\nreturn unescapeId.translate(input);\n}",
+               "ground_true": "private String unescapeId(String input){\n  final char quote='\"';\n  if (input.charAt(0) != quote || input.charAt(input.length() - 1) != quote) {\n    return input;\n  }\n  String noQuotes=input.subSequence(1,input.length() - 1).toString();\n  String unescaped=unescapeId.translate(noQuotes);\n  return unescaped;\n}\n"
+          },
+          {
+               "id": "6367667f1a6d9265ec017457",
+               "token_pos": 1,
+               "ranking": 4,
+               "generate_code": "private static int decodeOctets(int i,ByteBuffer bb,StringBuilder sb){\n    int n = 0;\n    while(i < bb.limit() && (n = bb.get(i)) >= 0){\n        sb.append((char)n);\n        i++;\n    }\n    return i;\n}",
+               "ground_true": "private static int decodeOctets(int i,ByteBuffer bb,StringBuilder sb){\n  if (bb.limit() == 1 && (bb.get(0) & 0xFF) < 0x80) {\n    sb.append((char)bb.get(0));\n    return i + 2;\n  }\n else {\n    CharBuffer cb=UTF_8_CHARSET.decode(bb);\n    sb.append(cb);\n    return i + bb.limit() * 3 - 1;\n  }\n}\n"
+          },
+          {
+               "id": "6367667f1a6d9265ec01745d",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public static List<PathSegmentImpl> decodePath(URI u,boolean decode){\n    return decodePath(u.getPath(),decode);\n}",
+               "ground_true": "public static List<PathSegmentImpl> decodePath(URI u,boolean decode){\n  String rawPath=u.getRawPath();\n  if (rawPath != null && rawPath.length() > 0 && rawPath.charAt(0) == '/') {\n    rawPath=rawPath.substring(1);\n  }\n  return decodePath(rawPath,decode);\n}\n"
+          },
+          {
+               "id": "636766861a6d9265ec01755a",
+               "token_pos": 77,
+               "ranking": 4,
+               "generate_code": "public final MatchResult match(CharSequence uri){\n    if (uri == null) {\n        throw new NullPointerException(\"uri == null\");\n    }\n    if (uri.length() == 0) {\n        return EMPTY_STRING_MATCH_RESULT;\n    }\n    if (regexPattern == null) {\n        throw new IllegalStateException(\"Pattern is not compiled\");\n    }\n    Matcher matcher = regexPattern.matcher(uri);\n    if (matcher.matches()) {\n        return new GroupIndexMatchResult(matcher);\n    }\n    return null;\n}",
+               "ground_true": "public final MatchResult match(CharSequence uri){\n  if (uri == null || uri.length() == 0)   return (regexPattern == null) ? EMPTY_STRING_MATCH_RESULT : null;\n else   if (regexPattern == null)   return null;\n  Matcher m=regexPattern.matcher(uri);\n  if (!m.matches())   return null;\n  return (groupIndexes.length > 0) ? new GroupIndexMatchResult(m) : m;\n}\n"
+          },
+          {
+               "id": "6367667f1a6d9265ec01745c",
+               "token_pos": 58,
+               "ranking": 3,
+               "generate_code": "@SuppressWarnings(\"unchecked\") public static void addToClassPath(Vector<URL> cpV,String dir){\n    File dirF=new File(dir);\n    if(dirF.isDirectory()){\n        File[] files=dirF.listFiles(new FilenameFilter(){\n            public boolean accept(File dirF,String name){\n                return name.endsWith(\".jar\");\n            }\n        });\n        for(File f:files){\n            try{\n                cpV.add(f.toURI().toURL());\n            }catch(MalformedURLException e){\n                e.printStackTrace();\n            }\n        }\n    }\n}",
+               "ground_true": "@SuppressWarnings(\"unchecked\") public static void addToClassPath(Vector<URL> cpV,String dir){\n  try {\n    String cpComp[]=getFilesByExt(dir,\".jar\");\n    if (cpComp != null) {\n      int jarCount=cpComp.length;\n      for (int i=0; i < jarCount; i++) {\n        URL url=getURL(dir,cpComp[i]);\n        if (url != null)         cpV.addElement(url);\n      }\n    }\n  }\n catch (  Exception ex) {\n    logger.debug(\"failed to add urls to classpath\",ex);\n  }\n}\n"
+          },
+          {
+               "id": "6367667d1a6d9265ec017401",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public static String unescapeJava(String str) throws Exception {\n    return unescapeJava(str, false, false);\n}",
+               "ground_true": "public static String unescapeJava(String str) throws Exception {\n  if (str == null) {\n    return null;\n  }\n  StringWriter writer=new StringWriter(str.length());\n  unescapeJava(writer,str);\n  return writer.toString();\n}\n"
+          },
+          {
+               "id": "636766821a6d9265ec0174b6",
+               "token_pos": 98,
+               "ranking": 3,
+               "generate_code": "public static Class<?>[] resolveArguments(Type genericType,Class<?> targetType){\n    if(genericType instanceof ParameterizedType){\n        ParameterizedType parameterizedType = (ParameterizedType) genericType;\n        Type[] actualTypeArguments = parameterizedType.getActualTypeArguments();\n        Class<?>[] resolvedArguments = new Class<?>[actualTypeArguments.length];\n        for(int i = 0;i < actualTypeArguments.length;i++){\n            resolvedArguments[i] = resolveArgument(actualTypeArguments[i],targetType);\n        }\n        return resolvedArguments;\n    }\n    return null;\n}",
+               "ground_true": "public static Class<?>[] resolveArguments(Type genericType,Class<?> targetType){\n  Class<?>[] result=null;\n  if (genericType instanceof ParameterizedType) {\n    ParameterizedType paramType=(ParameterizedType)genericType;\n    Type[] arguments=paramType.getActualTypeArguments();\n    result=new Class[arguments.length];\n    for (int i=0; i < arguments.length; i++)     result[i]=resolveClass(arguments[i],targetType);\n  }\n else   if (genericType instanceof TypeVariable) {\n    result=new Class[1];\n    result[0]=resolveClass(genericType,targetType);\n  }\n  return result;\n}\n"
+          },
+          {
+               "id": "6367667d1a6d9265ec01741d",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public static Type resolveBound(TypeVariable<?> typeVariable){\n    Type bound = typeVariable.getBounds()[0];\n    if(bound instanceof TypeVariable<?>){\n        bound = resolveBound((TypeVariable<?>)bound);\n    }\n    return bound;\n}",
+               "ground_true": "public static Type resolveBound(TypeVariable<?> typeVariable){\n  Type[] bounds=typeVariable.getBounds();\n  if (bounds.length == 0)   return Unknown.class;\n  Type bound=bounds[0];\n  if (bound instanceof TypeVariable)   bound=resolveBound((TypeVariable<?>)bound);\n  return bound == Object.class ? Unknown.class : bound;\n}\n"
+          },
+          {
+               "id": "636766821a6d9265ec0174d2",
+               "token_pos": 0,
+               "ranking": 7,
+               "generate_code": "public static AtmosphereRequest wrap(HttpServletRequest request){\nreturn new AtmosphereRequestImpl.Builder().request(request).build();\n}",
+               "ground_true": "public static AtmosphereRequest wrap(HttpServletRequest request){\n  if (AtmosphereRequestImpl.class.isAssignableFrom(request.getClass())) {\n    return (AtmosphereRequestImpl)request;\n  }\n  Builder b=new Builder();\n  Enumeration<String> e=request.getAttributeNames();\n  String s;\n  while (e.hasMoreElements()) {\n    s=e.nextElement();\n    b.localAttributes.put(s,attributeWithoutException(request,s));\n  }\n  return b.request(request).build();\n}\n"
+          },
+          {
+               "id": "6367667c1a6d9265ec0173fb",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "@Override public AtmosphereResource addEventListener(AtmosphereResourceEventListener e){\n    listeners.add(e);\n    return this;\n}",
+               "ground_true": "@Override public AtmosphereResource addEventListener(AtmosphereResourceEventListener e){\n  if (listeners.contains(e))   return this;\n  listeners.add(e);\n  return this;\n}\n"
+          },
+          {
+               "id": "636766831a6d9265ec0174eb",
+               "token_pos": 1,
+               "ranking": 3,
+               "generate_code": "private void addReverse(final File[] files){\n    for (int i = files.length - 1; i >= 0; i--) {\n        stack.push(files[i]);\n    }\n}",
+               "ground_true": "private void addReverse(final File[] files){\n  if (files == null)   return;\n  for (int i=files.length - 1; i >= 0; --i) {\n    stack.add(files[i]);\n  }\n}\n"
+          },
+          {
+               "id": "6367676b1a6d9265ec0181df",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public static boolean startsWithIgnoreCase(String str,String prefix){\n    return str.regionMatches(true,0,prefix,0,prefix.length());\n}",
+               "ground_true": "public static boolean startsWithIgnoreCase(String str,String prefix){\n  if (str == null || prefix == null) {\n    return false;\n  }\n  if (str.startsWith(prefix)) {\n    return true;\n  }\n  if (str.length() < prefix.length()) {\n    return false;\n  }\n  String lcStr=str.substring(0,prefix.length()).toLowerCase();\n  String lcPrefix=prefix.toLowerCase();\n  return lcStr.equals(lcPrefix);\n}\n"
+          },
+          {
+               "id": "6367676b1a6d9265ec0181e2",
+               "token_pos": 1,
+               "ranking": 3,
+               "generate_code": "public static Object findFirstMatch(Collection source,Collection candidates){\n    for(Object candidate : candidates){\n        if(source.contains(candidate)){\n            return candidate;\n        }\n    }\n    return null;\n}",
+               "ground_true": "public static Object findFirstMatch(Collection source,Collection candidates){\n  if (isEmpty(source) || isEmpty(candidates)) {\n    return null;\n  }\n  for (  Object candidate : candidates) {\n    if (source.contains(candidate)) {\n      return candidate;\n    }\n  }\n  return null;\n}\n"
+          },
+          {
+               "id": "6367676c1a6d9265ec018223",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public static boolean containsInstance(Collection collection,Object element){\n    return collection.contains(element);\n}",
+               "ground_true": "public static boolean containsInstance(Collection collection,Object element){\n  if (collection != null) {\n    for (    Object candidate : collection) {\n      if (candidate == element) {\n        return true;\n      }\n    }\n  }\n  return false;\n}\n"
+          },
+          {
+               "id": "6367676c1a6d9265ec018220",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public static String stripFilenameExtension(String path){\n    int extIndex = path.lastIndexOf(46);\n    if(extIndex == -1){\n        return path;\n    }\n    return path.substring(0,extIndex);\n}",
+               "ground_true": "public static String stripFilenameExtension(String path){\n  if (path == null) {\n    return null;\n  }\n  int extIndex=path.lastIndexOf(EXTENSION_SEPARATOR);\n  if (extIndex == -1) {\n    return path;\n  }\n  int folderIndex=path.lastIndexOf(FOLDER_SEPARATOR);\n  if (folderIndex > extIndex) {\n    return path;\n  }\n  return path.substring(0,extIndex);\n}\n"
+          },
+          {
+               "id": "636767841a6d9265ec0183ff",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public static void selectRow(int row,JTable table,JScrollPane pane){\n    table.setRowSelectionInterval(row,row);\n    makeVerticalScrollBarTrack(pane);\n}",
+               "ground_true": "public static void selectRow(int row,JTable table,JScrollPane pane){\n  if (table == null || pane == null) {\n    return;\n  }\n  if (contains(row,table.getModel()) == false) {\n    return;\n  }\n  moveAdjustable(row * table.getRowHeight(),pane.getVerticalScrollBar());\n  selectRow(row,table.getSelectionModel());\n  repaintLater(table);\n}\n"
+          },
+          {
+               "id": "636767781a6d9265ec018242",
+               "token_pos": 16,
+               "ranking": 2,
+               "generate_code": "public int appendLoopOnAppenders(LoggingEvent event){\n    int i = 0;\n    Enumeration enumeration = getAllAppenders();\n    while (enumeration.hasMoreElements()) {\n        Appender appender = (Appender) enumeration.nextElement();\n        appender.doAppend(event);\n        i++;\n    }\n    return i;\n}",
+               "ground_true": "public int appendLoopOnAppenders(LoggingEvent event){\n  int size=0;\n  Appender appender;\n  if (appenderList != null) {\n    size=appenderList.size();\n    for (int i=0; i < size; i++) {\n      appender=(Appender)appenderList.elementAt(i);\n      appender.doAppend(event);\n    }\n  }\n  return size;\n}\n"
+          },
+          {
+               "id": "636767841a6d9265ec0183f2",
+               "token_pos": 0,
+               "ranking": 4,
+               "generate_code": "public int compare(Object aObj1,Object aObj2){\nEventDetails e1=(EventDetails)aObj1;\nEventDetails e2=(EventDetails)aObj2;\nreturn e1.getTimeStamp().compareTo(e2.getTimeStamp());\n}",
+               "ground_true": "public int compare(Object aObj1,Object aObj2){\n  if ((aObj1 == null) && (aObj2 == null)) {\n    return 0;\n  }\n else   if (aObj1 == null) {\n    return -1;\n  }\n else   if (aObj2 == null) {\n    return 1;\n  }\n  final EventDetails le1=(EventDetails)aObj1;\n  final EventDetails le2=(EventDetails)aObj2;\n  if (le1.getTimeStamp() < le2.getTimeStamp()) {\n    return 1;\n  }\n  return -1;\n}\n"
+          },
+          {
+               "id": "636767df1a6d9265ec01873c",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public String id(String entityId){\n    return point + Const.ID_CONNECTOR + entityId;\n}",
+               "ground_true": "public String id(String entityId){\n  if (entityId == null) {\n    return String.valueOf(point);\n  }\n else {\n    return point + Const.ID_CONNECTOR + entityId;\n  }\n}\n"
+          },
+          {
+               "id": "636767df1a6d9265ec018744",
+               "token_pos": 1,
+               "ranking": 3,
+               "generate_code": "protected List<TimeRange> buildTimeRanges(long start,long end){\n    List<TimeRange> timeRanges = new ArrayList<>();\n    long timeRangeSize = FETCH_DATA_DURATION;\n    long timeRangeStart = start;\n    long timeRangeEnd = start + timeRangeSize;\n    while (timeRangeEnd <= end){\n        timeRanges.add(new TimeRange(timeRangeStart,timeRangeEnd));\n        timeRangeStart = timeRangeEnd;\n        timeRangeEnd = timeRangeStart + timeRangeSize;\n    }\n    if (timeRangeEnd > end){\n        timeRanges.add(new TimeRange(timeRangeStart,end));\n    }\n    return timeRanges;\n}",
+               "ground_true": "protected List<TimeRange> buildTimeRanges(long start,long end){\n  if (start >= end) {\n    return null;\n  }\n  end+=1;\n  final List<TimeRange> timeRanges=new ArrayList<>();\n  do {\n    long batchEnd=Math.min(start + FETCH_DATA_DURATION,end);\n    timeRanges.add(new TimeRange(start,batchEnd));\n    start=batchEnd;\n  }\n while (start < end);\n  return timeRanges;\n}\n"
+          },
+          {
+               "id": "636767de1a6d9265ec018706",
+               "token_pos": 1,
+               "ranking": 4,
+               "generate_code": "public Mappings diffStructure(String tableName,Mappings mappings){\n    return mappings.stream().filter(mapping -> !containsStructure(tableName,mappings)).collect(Collectors.toMap(Mappings::getType, mapping -> mapping));\n}",
+               "ground_true": "public Mappings diffStructure(String tableName,Mappings mappings){\n  if (!structures.containsKey(tableName)) {\n    return new Mappings();\n  }\n  Map<String,Object> properties=mappings.getProperties();\n  Map<String,Object> diffProperties=structures.get(tableName).diffFields(new Fields(mappings));\n  return Mappings.builder().type(ElasticSearchClient.TYPE).properties(diffProperties).build();\n}\n"
+          },
+          {
+               "id": "636767dc1a6d9265ec0186be",
+               "token_pos": 1,
+               "ranking": 3,
+               "generate_code": "static long compressTimeBucket(long timeBucket,int dayStep){\n    long timeBucketDay = timeBucket / dayStep;\n    return timeBucketDay * dayStep;\n}",
+               "ground_true": "static long compressTimeBucket(long timeBucket,int dayStep){\n  if (dayStep > 1) {\n    DateTime time=TIME_BUCKET_FORMATTER.parseDateTime(\"\" + timeBucket);\n    int days=Days.daysBetween(DAY_ONE,time).getDays();\n    int groupBucketOffset=days % dayStep;\n    return Long.parseLong(time.minusDays(groupBucketOffset).toString(TIME_BUCKET_FORMATTER));\n  }\n else {\n    return timeBucket;\n  }\n}\n"
+          },
+          {
+               "id": "636767dc1a6d9265ec0186c6",
+               "token_pos": 1,
+               "ranking": 3,
+               "generate_code": "private boolean containsAllFields(Fields fields){\n    return fields.getFields().entrySet().stream().allMatch(entry -> properties.containsKey(entry.getKey()));\n}",
+               "ground_true": "private boolean containsAllFields(Fields fields){\n  if (this.properties.size() < fields.properties.size()) {\n    return false;\n  }\n  boolean isContains=fields.properties.entrySet().stream().allMatch(item -> Objects.equals(properties.get(item.getKey()),item.getValue()));\n  if (!isContains) {\n    return false;\n  }\n  return fields.source.getExcludes().containsAll(this.source.getExcludes());\n}\n"
+          },
+          {
+               "id": "636767dc1a6d9265ec0186cb",
+               "token_pos": 23,
+               "ranking": 27,
+               "generate_code": "public void init(){\n    File file = new File(analyzeResultDist);\n    if(!file.exists()){\n        file.mkdirs();\n    }\n}",
+               "ground_true": "public void init(){\n  File dist=new File(analyzeResultDist);\n  if (!dist.exists()) {\n    dist.mkdirs();\n    return;\n  }\n  if (dist.isFile()) {\n    throw new IllegalArgumentException(analyzeResultDist + \" must be a directory\");\n  }\n}\n"
+          },
+          {
+               "id": "636766a91a6d9265ec0175c2",
+               "token_pos": 1,
+               "ranking": 3,
+               "generate_code": "private int pop(){\n    int abstractType = outputStack[--outputStackTop];\n    return abstractType;\n}",
+               "ground_true": "private int pop(){\n  if (outputStackTop > 0) {\n    return outputStack[--outputStackTop];\n  }\n else {\n    return STACK_KIND | -(--outputStackStart);\n  }\n}\n"
+          },
+          {
+               "id": "636766a81a6d9265ec017586",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "private void pop(final int elements){\n    for(int i = 0; i < elements; i++){\n        pop();\n    }\n}",
+               "ground_true": "private void pop(final int elements){\n  if (outputStackTop >= elements) {\n    outputStackTop-=elements;\n  }\n else {\n    outputStackStart-=elements - outputStackTop;\n    outputStackTop=0;\n  }\n}\n"
+          },
+          {
+               "id": "636766a91a6d9265ec0175c4",
+               "token_pos": 20,
+               "ranking": 2,
+               "generate_code": "private void pop(final String descriptor){\n    final int length = descriptor.length();\n    final char firstChar = descriptor.charAt(0);\n    switch(firstChar){\n        case 'B':\n            popByte();\n            break;\n        case 'C':\n            popChar();\n            break;\n        case 'D':\n            popDouble();\n            break;\n        case 'F':\n            popFloat();\n            break;\n        case 'I':\n            popInt();\n            break;\n        case 'J':\n            popLong();\n            break;\n        case 'S':\n            popShort();\n            break;\n        case 'Z':\n            popBoolean();\n            break;\n        default:\n            throw new IllegalArgumentException(\"Invalid descriptor: \" + descriptor);\n    }\n}",
+               "ground_true": "private void pop(final String descriptor){\n  char firstDescriptorChar=descriptor.charAt(0);\n  if (firstDescriptorChar == '(') {\n    pop((Type.getArgumentsAndReturnSizes(descriptor) >> 2) - 1);\n  }\n else   if (firstDescriptorChar == 'J' || firstDescriptorChar == 'D') {\n    pop(2);\n  }\n else {\n    pop(1);\n  }\n}\n"
+          },
+          {
+               "id": "636766a81a6d9265ec01758e",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public static int nextPrime(int desiredCapacity){\n    int i = 0;\n    while (i < primeCapacities.length && primeCapacities[i] < desiredCapacity){\n        i++;\n    }\n    return primeCapacities[i];\n}",
+               "ground_true": "public static int nextPrime(int desiredCapacity){\n  if (desiredCapacity >= largestPrime) {\n    return largestPrime;\n  }\n  int i=Arrays.binarySearch(primeCapacities,desiredCapacity);\n  if (i < 0) {\n    i=-i - 1;\n  }\n  return primeCapacities[i];\n}\n"
+          },
+          {
+               "id": "636767a41a6d9265ec018582",
+               "token_pos": 1,
+               "ranking": 4,
+               "generate_code": "public static <T>int writeDelimitedTo(OutputStream out,T message,Schema<T> schema,LinkedBuffer buffer) throws IOException {\n    int size = ProtobufIOUtil.writeDelimitedTo(buffer,message,schema);\n    ProtobufIOUtil.writeTo(buffer,out);\n    return size;\n}",
+               "ground_true": "public static <T>int writeDelimitedTo(OutputStream out,T message,Schema<T> schema,LinkedBuffer buffer) throws IOException {\n  if (buffer.start != buffer.offset)   throw new IllegalArgumentException(\"Buffer previously used and had not been reset.\");\n  final ProtobufOutput output=new ProtobufOutput(buffer);\n  schema.writeTo(output,message);\n  final int size=output.getSize();\n  ProtobufOutput.writeRawVarInt32Bytes(out,size);\n  final int msgSize=LinkedBuffer.writeTo(out,buffer);\n  assert size == msgSize;\n  return size;\n}\n"
+          },
+          {
+               "id": "636767a51a6d9265ec01859d",
+               "token_pos": 0,
+               "ranking": 3,
+               "generate_code": "public boolean equals(final byte[] data,int offset,final int len){\nreturn Arrays.equals(bytes,offset,len,data);\n}",
+               "ground_true": "public boolean equals(final byte[] data,int offset,final int len){\n  final byte[] bytes=this.bytes;\n  if (len != bytes.length)   return false;\n  for (int i=0; i < len; ) {\n    if (bytes[i++] != data[offset++]) {\n      return false;\n    }\n  }\n  return true;\n}\n"
+          },
+          {
+               "id": "636767ab1a6d9265ec01867b",
+               "token_pos": 1,
+               "ranking": 3,
+               "generate_code": "public static LinkedBuffer writeUTF8(final CharSequence str,final WriteSession session,final LinkedBuffer lb){\n    return writeUTF8(str,0,str.length(),session,lb);\n}",
+               "ground_true": "public static LinkedBuffer writeUTF8(final CharSequence str,final WriteSession session,final LinkedBuffer lb){\n  final int len=str.length();\n  if (len == 0)   return lb;\n  return lb.offset + len > lb.buffer.length ? writeUTF8(str,0,len,lb.buffer,lb.offset,lb.buffer.length,session,lb) : writeUTF8(str,0,len,session,lb);\n}\n"
+          },
+          {
+               "id": "636767a81a6d9265ec0185fc",
+               "token_pos": 1,
+               "ranking": 2,
+               "generate_code": "public int readTag() throws IOException {\n    int tag = currentOffset() >> TAG_TYPE_BITS;\n    if (tag == 0) {\n        throw new IOException(\"EOF\");\n    }\n    return tag;\n}",
+               "ground_true": "public int readTag() throws IOException {\n  if (!buffer.hasRemaining()) {\n    lastTag=0;\n    return 0;\n  }\n  final int tag=readRawVarint32();\n  if (tag >>> TAG_TYPE_BITS == 0) {\n    throw ProtobufException.invalidTag();\n  }\n  lastTag=tag;\n  return tag;\n}\n"
+          }
+     ]
+}

@@ -26,3 +26,5 @@ python Pipeline/generate.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct) --A
 ##run w/o RobGen:
 python Pipeline/generate.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct)
 ```
+#### Empirical Study
+All data for the Empirical Study is stored in the ```Empirical Study``` directory.

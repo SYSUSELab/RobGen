@@ -1,0 +1,376 @@
+{
+     "datas": [
+          {
+               "id": "6367670b1a6d9265ec017a00",
+               "pos": 2,
+               "generate_code": "public static boolean isSameLength(final byte[] array1,final byte[] array2){\n    if(array1 == null || array2 == null){\n        return (array1 == null && array2 == null);\n    }\n    return array1.length == array2.length;\n}",
+               "ground_true": "public static boolean isSameLength(final byte[] array1,final byte[] array2){\n  if (array1 == null && array2 != null && array2.length > 0 || array2 == null && array1 != null && array1.length > 0 || array1 != null && array2 != null && array1.length != array2.length) {\n    return false;\n  }\n  return true;\n}\n"
+          },
+          {
+               "id": "636767031a6d9265ec0178e6",
+               "pos": 3,
+               "generate_code": "public static byte[] toPrimitive(final Byte[] array){\n    if(array == null){\n        return null;\n    }else{\n        final int length = array.length;\n        final byte[] result = new byte[length];\n        for(int i=0;i<length;i++){\n            result[i] = array[i].byteValue();\n        }\n        return result;\n    }\n}",
+               "ground_true": "public static byte[] toPrimitive(final Byte[] array){\n  if (array == null) {\n    return null;\n  }\n else   if (array.length == 0) {\n    return ArrayUtils.EMPTY_BYTE_ARRAY;\n  }\n  final byte[] result=new byte[array.length];\n  for (int i=0; i < array.length; i++) {\n    result[i]=array[i].byteValue();\n  }\n  return result;\n}\n"
+          },
+          {
+               "id": "636767081a6d9265ec0179a2",
+               "pos": 1,
+               "generate_code": "private static boolean isAllZeros(String s){\n    for (int i = 0; i < s.length(); i++) {\n        if(s.charAt(i) != '0'){\n            return false;\n        }\n    }\n    return true;\n}",
+               "ground_true": "private static boolean isAllZeros(String s){\n  if (s == null) {\n    return true;\n  }\n  for (int i=s.length() - 1; i >= 0; i--) {\n    if (s.charAt(i) != '0') {\n      return false;\n    }\n  }\n  return s.length() > 0;\n}\n"
+          },
+          {
+               "id": "636767041a6d9265ec01790f",
+               "pos": 4,
+               "generate_code": "public static Integer[] toObject(final int[] array){\n    if (array == null) {\n        return null;\n    }\n    final Integer[] result = new Integer[array.length];\n    for (int i = 0; i < array.length; i++) {\n        result[i] = array[i];\n    }\n    return result;\n}",
+               "ground_true": "public static Integer[] toObject(final int[] array){\n  if (array == null) {\n    return null;\n  }\n else   if (array.length == 0) {\n    return ArrayUtils.EMPTY_INTEGER_OBJECT_ARRAY;\n  }\n  final Integer[] result=new Integer[array.length];\n  for (int i=0; i < array.length; i++) {\n    result[i]=new Integer(array[i]);\n  }\n  return result;\n}\n"
+          },
+          {
+               "id": "636766fa1a6d9265ec0177a4",
+               "pos": 4,
+               "generate_code": "public static Double[] toObject(final double[] array){\n    if (array == null) {\n        return null;\n    }\n    final Double[] result = new Double[array.length];\n    for (int i = 0; i < array.length; i++) {\n        result[i] = array[i];\n    }\n    return result;\n}",
+               "ground_true": "public static Double[] toObject(final double[] array){\n  if (array == null) {\n    return null;\n  }\n else   if (array.length == 0) {\n    return ArrayUtils.EMPTY_DOUBLE_OBJECT_ARRAY;\n  }\n  final Double[] result=new Double[array.length];\n  for (int i=0; i < array.length; i++) {\n    result[i]=new Double(array[i]);\n  }\n  return result;\n}\n"
+          },
+          {
+               "id": "636767151a6d9265ec017b6b",
+               "pos": 4,
+               "generate_code": "private static boolean startsWith(final String str,final String prefix,final boolean ignoreCase){\n    if(str==null||prefix==null){\n        return str==prefix;\n    }\n    if(ignoreCase){\n        return str.regionMatches(true,0,prefix,0,prefix.length());\n    }else{\n        return str.startsWith(prefix);\n    }\n}",
+               "ground_true": "private static boolean startsWith(final String str,final String prefix,final boolean ignoreCase){\n  if (str == null || prefix == null) {\n    return str == null && prefix == null;\n  }\n  if (prefix.length() > str.length()) {\n    return false;\n  }\n  return str.regionMatches(ignoreCase,0,prefix,0,prefix.length());\n}\n"
+          },
+          {
+               "id": "636766fe1a6d9265ec01781c",
+               "pos": 1,
+               "generate_code": "public static Character toCharacterObject(final char ch){\n    return new Character(ch);\n}",
+               "ground_true": "public static Character toCharacterObject(final char ch){\n  if (ch < CharUtils.CHAR_ARRAY.length) {\n    return CharUtils.CHAR_ARRAY[ch];\n  }\n  return new Character(ch);\n}\n"
+          },
+          {
+               "id": "636766f81a6d9265ec017748",
+               "pos": 3,
+               "generate_code": "public static String base64Decode(final String s){\n    try {\n        byte[] bytes = Base64.getDecoder().decode(s);\n        return new String(bytes, StandardCharsets.UTF_8);\n    } catch (Exception e) {\n        e.printStackTrace();\n        return null;\n    }\n}",
+               "ground_true": "public static String base64Decode(final String s){\n  byte[] b=Base64.base64DecodeToArray(s);\n  if (b == null) {\n    return null;\n  }\n  if (b.length == 0) {\n    return \"\";\n  }\n  return new String(b,StandardCharsets.UTF_8);\n}\n"
+          },
+          {
+               "id": "636766f11a6d9265ec017663",
+               "pos": 7,
+               "generate_code": "public static boolean isSameLength(final double[] array1,final double[] array2){\n    if(array1 == null && array2 == null){\n        return true;\n    }\n    if(array1 != null && array2 != null){\n        return array1.length == array2.length;\n    }\n    return false;\n}",
+               "ground_true": "public static boolean isSameLength(final double[] array1,final double[] array2){\n  if (array1 == null && array2 != null && array2.length > 0 || array2 == null && array1 != null && array1.length > 0 || array1 != null && array2 != null && array1.length != array2.length) {\n    return false;\n  }\n  return true;\n}\n"
+          },
+          {
+               "id": "6367670b1a6d9265ec017a05",
+               "pos": 1,
+               "generate_code": "public static String toString(final char ch){\n    return new String(new char[]{ch});\n}",
+               "ground_true": "public static String toString(final char ch){\n  if (ch < 128) {\n    return CharUtils.CHAR_STRING_ARRAY[ch];\n  }\n  return new String(new char[]{ch});\n}\n"
+          },
+          {
+               "id": "6367671a1a6d9265ec017c15",
+               "pos": 4,
+               "generate_code": "public ByteVector putByteArray(final byte[] byteArrayValue,final int byteOffset,final int byteLength){\n    //Check if there is enough space in the current buffer\n    if(length+byteLength>data.length){\n        //If not, enlarge the buffer to accommodate the new data\n        enlarge(byteLength);\n    }\n    //Copy the specified portion of the input array into the buffer at the current position\n    System.arraycopy(byteArrayValue,byteOffset,data,length,byteLength);\n    //Update the length of the byte vector to reflect the added data\n    length+=byteLength;\n    return this;\n}",
+               "ground_true": "public ByteVector putByteArray(final byte[] byteArrayValue,final int byteOffset,final int byteLength){\n  if (length + byteLength > data.length) {\n    enlarge(byteLength);\n  }\n  if (byteArrayValue != null) {\n    System.arraycopy(byteArrayValue,byteOffset,data,length,byteLength);\n  }\n  length+=byteLength;\n  return this;\n}\n"
+          },
+          {
+               "id": "636766fa1a6d9265ec0177a9",
+               "pos": 1,
+               "generate_code": "private void addInitializedType(final int abstractType){\n    if(initializationCount == initializations.length){\n        final int newLength = (initializationCount + 1) * 2;\n        final int[] newInitializations = new int[newLength];\n        System.arraycopy(initializations,0,newInitializations,0,initializationCount);\n        initializations = newInitializations;\n    }\n    initializations[initializationCount++] = abstractType;\n}",
+               "ground_true": "private void addInitializedType(final int abstractType){\n  if (initializations == null) {\n    initializations=new int[2];\n  }\n  int initializationsLength=initializations.length;\n  if (initializationCount >= initializationsLength) {\n    int[] newInitializations=new int[Math.max(initializationCount + 1,2 * initializationsLength)];\n    System.arraycopy(initializations,0,newInitializations,0,initializationsLength);\n    initializations=newInitializations;\n  }\n  initializations[initializationCount++]=abstractType;\n}\n"
+          },
+          {
+               "id": "636766fe1a6d9265ec017823",
+               "pos": 5,
+               "generate_code": "int addConstantNameAndType(final String name,final String descriptor){\n    final int hash=hash(NAME_AND_TYPE_TAG,name,descriptor);\n    Entry e=get(hash);\n    while(e!=null){\n        if(e.tag==NAME_AND_TYPE_TAG&&e.name.equals(name)&&e.value.equals(descriptor)){\n            return e.index;\n        }\n        e=e.next;\n    }\n    e=new Entry(getNextIndex(),NAME_AND_TYPE_TAG,name,descriptor,0L,hash);\n    put(e);\n    return e.index;\n}",
+               "ground_true": "int addConstantNameAndType(final String name,final String descriptor){\n  final int tag=Symbol.CONSTANT_NAME_AND_TYPE_TAG;\n  int hashCode=hash(tag,name,descriptor);\n  Entry entry=get(hashCode);\n  while (entry != null) {\n    if (entry.tag == tag && entry.hashCode == hashCode && entry.name.equals(name) && entry.value.equals(descriptor)) {\n      return entry.index;\n    }\n    entry=entry.next;\n  }\n  constantPool.put122(tag,addConstantUtf8(name),addConstantUtf8(descriptor));\n  return put(new Entry(constantPoolCount++,tag,name,descriptor,hashCode)).index;\n}\n"
+          },
+          {
+               "id": "636767061a6d9265ec01794a",
+               "pos": 6,
+               "generate_code": "public static int indexOfExtension(String filename){\n    if(filename == null){\n        return -1;\n    }\n    int extensionPos = filename.lastIndexOf(EXTENSION_SEPARATOR);\n    int dirPos = indexOfLastSeparator(filename);\n    return Math.max(extensionPos,dirPos);\n}",
+               "ground_true": "public static int indexOfExtension(String filename){\n  if (filename == null) {\n    return -1;\n  }\n  int extensionPos=filename.lastIndexOf(EXTENSION_SEPARATOR);\n  int lastSeparator=indexOfLastSeparator(filename);\n  return lastSeparator > extensionPos ? -1 : extensionPos;\n}\n"
+          },
+          {
+               "id": "636766f91a6d9265ec01776e",
+               "pos": 1,
+               "generate_code": "@Override public void write(final byte b[],final int off,final int len) throws IOException {\n    if (len == 0) return;\n    final int end = off + len;\n    for (int i = off; i < end; ++i) {\n        write(b[i]);\n    }\n}",
+               "ground_true": "@Override public void write(final byte b[],final int off,final int len) throws IOException {\n  if (off < 0 || off > b.length || len < 0 || off + len > b.length || off + len < 0) {\n    throw new IndexOutOfBoundsException();\n  }\n else   if (len == 0) {\n    return;\n  }\n  if (this.count + len > this.buf.length) {\n    this.encodePendingBytes(false);\n  }\n  System.arraycopy(b,off,this.buf,this.count,len);\n  this.count+=len;\n}\n"
+          },
+          {
+               "id": "636767001a6d9265ec01787e",
+               "pos": 1,
+               "generate_code": "public String toString(){\n    return super.toString();\n}",
+               "ground_true": "public String toString(){\n  if (this.getObject() == null) {\n    return this.getStyle().getNullText();\n  }\n  Class<?> clazz=this.getObject().getClass();\n  this.appendFieldsIn(clazz);\n  while (clazz.getSuperclass() != null && clazz != this.getUpToClass()) {\n    clazz=clazz.getSuperclass();\n    this.appendFieldsIn(clazz);\n  }\n  return super.toString();\n}\n"
+          },
+          {
+               "id": "636766f11a6d9265ec017641",
+               "pos": 1,
+               "generate_code": "@Override public int available() throws IOException {\n    return length - index;\n}",
+               "ground_true": "@Override public int available() throws IOException {\n  return this.index < this.length ? this.length - this.index : this.length >= 0 && this.reader.ready() ? 1 : 0;\n}\n"
+          },
+          {
+               "id": "6367670a1a6d9265ec0179e7",
+               "pos": 1,
+               "generate_code": "public Converter lookup(final Class<?> clazz){\n    return converters.get(clazz);\n}",
+               "ground_true": "public Converter lookup(final Class<?> clazz){\n  Converter conv=(Converter)this.converters.get(clazz);\n  if (conv != null) {\n    return conv;\n  }\n  for (  Object regType : this.converters.keySet()) {\n    if (((Class<?>)regType).isAssignableFrom(clazz)) {\n      return (Converter)this.converters.get(regType);\n    }\n  }\n  return null;\n}\n"
+          },
+          {
+               "id": "6367670b1a6d9265ec017a0f",
+               "pos": 1,
+               "generate_code": "public static boolean containsAnyIgnoreCase(String str,List<String> searchStrArray){\n    if (StringUtils.isBlank(str)) {\n        return false;\n    }\n    for (String searchStr : searchStrArray) {\n        if (str.equalsIgnoreCase(searchStr)) {\n            return true;\n        }\n    }\n    return false;\n}",
+               "ground_true": "public static boolean containsAnyIgnoreCase(String str,List<String> searchStrArray){\n  if (StringUtils.isEmpty(str) || searchStrArray == null || searchStrArray.isEmpty()) {\n    return false;\n  }\n  for (  String item : searchStrArray) {\n    if (containsIgnoreCase(str,item)) {\n      return true;\n    }\n  }\n  return false;\n}\n"
+          },
+          {
+               "id": "636766fe1a6d9265ec017834",
+               "pos": 2,
+               "generate_code": "public static String sessionId(){\n    return Invoker.getHttpServletResponse().getSession().getId();\n}",
+               "ground_true": "public static String sessionId(){\n  HttpSession httpSession=servletSession();\n  if (httpSession == null) {\n    return null;\n  }\n  return httpSession.getId();\n}\n"
+          },
+          {
+               "id": "636766ae1a6d9265ec0175dc",
+               "pos": 1,
+               "generate_code": "public Boolean isPartialContentResponse(){\n    return this.response.getStatus() == 206;\n}",
+               "ground_true": "public Boolean isPartialContentResponse(){\n  Integer limit=drc.getLimit() == null ? 0 : drc.getLimit();\n  Long count=drc.getCount() == null ? 0 : drc.getCount();\n  return !((limit + 1) >= count);\n}\n"
+          },
+          {
+               "id": "636766ae1a6d9265ec0175d8",
+               "pos": 1,
+               "generate_code": "private String buildContentRange(){\n    int offset = this.getOffset();\n    int limit = this.getLimit();\n    int count = this.getCount();\n    if(limit == 0){\n        return \"bytes \" + offset + \"-\" + (count - 1) + \"/\" + count;\n    }else{\n        return \"bytes \" + offset + \"-\" + (offset + limit - 1) + \"/\" + count;\n    }\n}",
+               "ground_true": "private String buildContentRange(){\n  Integer limit=drc.getLimit() == null ? getDefaultNumberPagination() - 1 : drc.getLimit();\n  Integer offset=drc.getOffset() == null ? 0 : drc.getOffset();\n  Long count=drc.getCount() == null ? 0 : drc.getCount();\n  return offset + \"-\" + (limit.equals(0) ? count - 1 : limit)+ \"/\"+ count;\n}\n"
+          },
+          {
+               "id": "636767501a6d9265ec017e86",
+               "pos": 2,
+               "generate_code": "@Override public ListNode<E> previousNode(){\n    return this.prev;\n}",
+               "ground_true": "@Override public ListNode<E> previousNode(){\n  checkForComodification();\n  if (!hasPrevious()) {\n    throw new NoSuchElementException();\n  }\n  last=next=next.prev;\n  nextIndex--;\n  return last;\n}\n"
+          },
+          {
+               "id": "636767561a6d9265ec017f63",
+               "pos": 1,
+               "generate_code": "@Override public boolean hasNext(){\n    return !bucketList.isEmpty();\n}",
+               "ground_true": "@Override public boolean hasNext(){\n  if (current != null) {\n    return true;\n  }\n  current=advance();\n  if (current != null && nListeners != 0) {\n    fireVertexTraversed(createVertexTraversalEvent(current));\n  }\n  return current != null;\n}\n"
+          },
+          {
+               "id": "6367674b1a6d9265ec017dc0",
+               "pos": 5,
+               "generate_code": "private Set<V> initVisibleVertices(){\n    Set<V> visibleVertices = new HashSet<>();\n    for (E e : graph.edgeSet()) {\n        V source = graph.getEdgeSource(e);\n        V target = graph.getEdgeTarget(e);\n        visibleVertices.add(source);\n        visibleVertices.add(target);\n    }\n    return visibleVertices;\n}",
+               "ground_true": "private Set<V> initVisibleVertices(){\n  Set<V> visibleVertex=new HashSet<>();\n  for (  E e : graph.edgeSet()) {\n    V s=graph.getEdgeSource(e);\n    V t=graph.getEdgeTarget(e);\n    if (!s.equals(t)) {\n      visibleVertex.add(s);\n      visibleVertex.add(t);\n    }\n  }\n  return visibleVertex;\n}\n"
+          },
+          {
+               "id": "636767431a6d9265ec017c8d",
+               "pos": 1,
+               "generate_code": "private int computeBinaryLog(int n){\n    return (int)(Math.log(n) / Math.log(2));\n}",
+               "ground_true": "private int computeBinaryLog(int n){\n  assert n >= 0;\n  int result=0;\n  while (n > 0) {\n    n>>=1;\n    ++result;\n  }\n  return result;\n}\n"
+          },
+          {
+               "id": "636767641a6d9265ec018190",
+               "pos": 1,
+               "generate_code": "private void reload(List<Set<Integer>> bucketsByLabel,List<Integer> labels,int minLabel){\n    for(Integer vertex : bucketsByLabel.get(minLabel)){\n        putToNextBucket(vertex,0,bucketsByLabel,labels);\n    }\n    bucketsByLabel.get(minLabel).clear();\n}",
+               "ground_true": "private void reload(List<Set<Integer>> bucketsByLabel,List<Integer> labels,int minLabel){\n  if (minLabel != 0 && minLabel < bucketsByLabel.size()) {\n    Set<Integer> bucket=bucketsByLabel.get(minLabel);\n    for (    Integer vertex : bucket) {\n      labels.set(vertex,0);\n      bucketsByLabel.get(0).add(vertex);\n    }\n    bucket.clear();\n  }\n}\n"
+          },
+          {
+               "id": "636767511a6d9265ec017eb0",
+               "pos": 1,
+               "generate_code": "public int nonZeros(int row){\n    return this.rowOffsets[row+1]-this.rowOffsets[row];\n}",
+               "ground_true": "public int nonZeros(int row){\n  assert row >= 0 && row < rowOffsets.length;\n  return rowOffsets[row + 1] - rowOffsets[row];\n}\n"
+          },
+          {
+               "id": "636767461a6d9265ec017d17",
+               "pos": 1,
+               "generate_code": "private String unescapeId(String input){\n    return unescapeHtmlString(input);\n}",
+               "ground_true": "private String unescapeId(String input){\n  final char quote='\"';\n  if (input.charAt(0) != quote || input.charAt(input.length() - 1) != quote) {\n    return input;\n  }\n  String noQuotes=input.subSequence(1,input.length() - 1).toString();\n  String unescaped=unescapeId.translate(noQuotes);\n  return unescaped;\n}\n"
+          },
+          {
+               "id": "6367667f1a6d9265ec01745d",
+               "pos": 2,
+               "generate_code": "public static List<PathSegmentImpl> decodePath(URI u,boolean decode){\n    String path=u.getPath();\n    if(path==null){\n        return Collections.emptyList();\n    }\n    return decodePath(path,decode);\n}",
+               "ground_true": "public static List<PathSegmentImpl> decodePath(URI u,boolean decode){\n  String rawPath=u.getRawPath();\n  if (rawPath != null && rawPath.length() > 0 && rawPath.charAt(0) == '/') {\n    rawPath=rawPath.substring(1);\n  }\n  return decodePath(rawPath,decode);\n}\n"
+          },
+          {
+               "id": "636766861a6d9265ec01755a",
+               "pos": 1,
+               "generate_code": "public final MatchResult match(CharSequence uri){\n    if (r != null && r.matches()) {\n        return r;\n    }\n    return null;\n}",
+               "ground_true": "public final MatchResult match(CharSequence uri){\n  if (uri == null || uri.length() == 0)   return (regexPattern == null) ? EMPTY_STRING_MATCH_RESULT : null;\n else   if (regexPattern == null)   return null;\n  Matcher m=regexPattern.matcher(uri);\n  if (!m.matches())   return null;\n  return (groupIndexes.length > 0) ? new GroupIndexMatchResult(m) : m;\n}\n"
+          },
+          {
+               "id": "636766821a6d9265ec0174bf",
+               "pos": 1,
+               "generate_code": "public static String capitalize(String name){\n    char[] chars = name.toCharArray();\n    chars[0] = Character.toUpperCase(chars[0]);\n    return new String(chars);\n}",
+               "ground_true": "public static String capitalize(String name){\n  if (name == null || name.length() == 0) {\n    return name;\n  }\n  char chars[]=name.toCharArray();\n  chars[0]=Character.toUpperCase(chars[0]);\n  return new String(chars);\n}\n"
+          },
+          {
+               "id": "636766821a6d9265ec0174d2",
+               "pos": 1,
+               "generate_code": "public static AtmosphereRequest wrap(HttpServletRequest request){\n    return new AtmosphereRequestImpl.Builder().request(request).build();\n}",
+               "ground_true": "public static AtmosphereRequest wrap(HttpServletRequest request){\n  if (AtmosphereRequestImpl.class.isAssignableFrom(request.getClass())) {\n    return (AtmosphereRequestImpl)request;\n  }\n  Builder b=new Builder();\n  Enumeration<String> e=request.getAttributeNames();\n  String s;\n  while (e.hasMoreElements()) {\n    s=e.nextElement();\n    b.localAttributes.put(s,attributeWithoutException(request,s));\n  }\n  return b.request(request).build();\n}\n"
+          },
+          {
+               "id": "636766831a6d9265ec0174eb",
+               "pos": 1,
+               "generate_code": "private void addReverse(final File[] files){\n    for(int i = files.length - 1; i >= 0; i--){\n        stack.push(files[i]);\n    }\n}",
+               "ground_true": "private void addReverse(final File[] files){\n  if (files == null)   return;\n  for (int i=files.length - 1; i >= 0; --i) {\n    stack.add(files[i]);\n  }\n}\n"
+          },
+          {
+               "id": "6367676b1a6d9265ec0181df",
+               "pos": 4,
+               "generate_code": "public static boolean startsWithIgnoreCase(String str,String prefix){\n    if(str==null||prefix==null){\n        return false;\n    }\n    if(prefix.length()>str.length()){\n        return false;\n    }\n    String targetPrefix=str.substring(0,prefix.length());\n    return targetPrefix.equalsIgnoreCase(prefix);\n}",
+               "ground_true": "public static boolean startsWithIgnoreCase(String str,String prefix){\n  if (str == null || prefix == null) {\n    return false;\n  }\n  if (str.startsWith(prefix)) {\n    return true;\n  }\n  if (str.length() < prefix.length()) {\n    return false;\n  }\n  String lcStr=str.substring(0,prefix.length()).toLowerCase();\n  String lcPrefix=prefix.toLowerCase();\n  return lcStr.equals(lcPrefix);\n}\n"
+          },
+          {
+               "id": "636767691a6d9265ec0181ae",
+               "pos": 1,
+               "generate_code": "public static String[] toStringArray(Enumeration<String> enumeration){\n    List<String> list = Collections.list(enumeration);\n    return list.toArray(new String[list.size()]);\n}",
+               "ground_true": "public static String[] toStringArray(Enumeration<String> enumeration){\n  if (enumeration == null) {\n    return null;\n  }\n  List<String> list=java.util.Collections.list(enumeration);\n  return list.toArray(new String[list.size()]);\n}\n"
+          },
+          {
+               "id": "6367676b1a6d9265ec0181dd",
+               "pos": 1,
+               "generate_code": "public static int countOccurrencesOf(String str,String sub){\n    if(str == null || sub == null || str.length() < sub.length()){\n        return 0;\n    }\n    int count = 0;\n    int pos = 0;\n    while((pos = str.indexOf(sub,pos)) != -1){\n        count++;\n        pos += sub.length();\n    }\n    return count;\n}",
+               "ground_true": "public static int countOccurrencesOf(String str,String sub){\n  if (str == null || sub == null || str.length() == 0 || sub.length() == 0) {\n    return 0;\n  }\n  int count=0;\n  int pos=0;\n  int idx;\n  while ((idx=str.indexOf(sub,pos)) != -1) {\n    ++count;\n    pos=idx + sub.length();\n  }\n  return count;\n}\n"
+          },
+          {
+               "id": "6367676c1a6d9265ec018220",
+               "pos": 1,
+               "generate_code": "public static String stripFilenameExtension(String path){\n    int extIndex = path.lastIndexOf('.');\n    if (extIndex == -1) {\n        return path;\n    }\n    return path.substring(0, extIndex);\n}",
+               "ground_true": "public static String stripFilenameExtension(String path){\n  if (path == null) {\n    return null;\n  }\n  int extIndex=path.lastIndexOf(EXTENSION_SEPARATOR);\n  if (extIndex == -1) {\n    return path;\n  }\n  int folderIndex=path.lastIndexOf(FOLDER_SEPARATOR);\n  if (folderIndex > extIndex) {\n    return path;\n  }\n  return path.substring(0,extIndex);\n}\n"
+          },
+          {
+               "id": "6367677e1a6d9265ec01832e",
+               "pos": 2,
+               "generate_code": "public Logger exists(String name){\n    return (Logger)ht.get(name);\n}",
+               "ground_true": "public Logger exists(String name){\n  Object o=ht.get(new CategoryKey(name));\n  if (o instanceof Logger) {\n    return (Logger)o;\n  }\n else {\n    return null;\n  }\n}\n"
+          },
+          {
+               "id": "636767791a6d9265ec018257",
+               "pos": 1,
+               "generate_code": "public void addMessage(final LogRecord lr){\n    SwingUtilities.invokeLater(new Runnable(){\n        public void run(){\n            _table.add(lr);\n        }\n    });\n}",
+               "ground_true": "public void addMessage(final LogRecord lr){\n  if (_isDisposed == true) {\n    return;\n  }\n  SwingUtilities.invokeLater(new Runnable(){\n    public void run(){\n      _categoryExplorerTree.getExplorerModel().addLogRecord(lr);\n      _table.getFilteredLogTableModel().addLogRecord(lr);\n      updateStatusLabel();\n    }\n  }\n);\n}\n"
+          },
+          {
+               "id": "636767781a6d9265ec01823e",
+               "pos": 1,
+               "generate_code": "protected void append(LoggingEvent event){\n    String formattedMessage = this.layout.format(event);\n    if(this.layout.ignoresThrowable()){\n        formattedMessage += \"\\n\" + LogLog.stackTraceToString(event.getThrowableInformation().getThrowable());\n    }\n    send(formattedMessage);\n}",
+               "ground_true": "protected void append(LoggingEvent event){\n  if (sh != null) {\n    sh.send(layout.format(event));\n    if (layout.ignoresThrowable()) {\n      String[] s=event.getThrowableStrRep();\n      if (s != null) {\n        StringBuffer buf=new StringBuffer();\n        for (int i=0; i < s.length; i++) {\n          buf.append(s[i]);\n          buf.append(\"\\r\\n\");\n        }\n        sh.send(buf.toString());\n      }\n    }\n  }\n}\n"
+          },
+          {
+               "id": "6367677f1a6d9265ec01834b",
+               "pos": 1,
+               "generate_code": "public void put(LoggingEvent o){\n    if(isFull()){\n        resize(maxSize*2);\n    }\n    buf[next] = o;\n    next = (next+1)%maxSize;\n    numElements++;\n}",
+               "ground_true": "public void put(LoggingEvent o){\n  if (numElements != maxSize) {\n    buf[next]=o;\n    if (++next == maxSize) {\n      next=0;\n    }\n    numElements++;\n  }\n}\n"
+          },
+          {
+               "id": "636767781a6d9265ec018238",
+               "pos": 1,
+               "generate_code": "public boolean isAttached(Appender appender){\n    Enumeration enumeration = appenderList.elements();\n    while(enumeration.hasMoreElements()){\n        Appender element = (Appender)enumeration.nextElement();\n        if(element.equals(appender)){\n            return true;\n        }\n    }\n    return false;\n}",
+               "ground_true": "public boolean isAttached(Appender appender){\n  if (appenderList == null || appender == null)   return false;\n  int size=appenderList.size();\n  Appender a;\n  for (int i=0; i < size; i++) {\n    a=(Appender)appenderList.elementAt(i);\n    if (a == appender)     return true;\n  }\n  return false;\n}\n"
+          },
+          {
+               "id": "636767841a6d9265ec0183e8",
+               "pos": 6,
+               "generate_code": "public void add(LoggingEvent event){\n    if (numElems == maxSize) {\n        resize(maxSize * 2);\n    }\n    ea[last] = event;\n    last = (last + 1) % maxSize;\n    numElems++;\n}",
+               "ground_true": "public void add(LoggingEvent event){\n  ea[last]=event;\n  if (++last == maxSize)   last=0;\n  if (numElems < maxSize)   numElems++;\n else   if (++first == maxSize)   first=0;\n}\n"
+          },
+          {
+               "id": "636767861a6d9265ec01844c",
+               "pos": 1,
+               "generate_code": "public void removeAppender(String name){\n    Enumeration enumeration = getAllAppenders();\n    while(enumeration.hasMoreElements()){\n        Appender appender = (Appender) enumeration.nextElement();\n        if(appender.getName().equals(name)){\n            removeAppender(appender);\n        }\n    }\n}",
+               "ground_true": "public void removeAppender(String name){\n  if (name == null || appenderList == null)   return;\n  int size=appenderList.size();\n  for (int i=0; i < size; i++) {\n    if (name.equals(((Appender)appenderList.elementAt(i)).getName())) {\n      appenderList.removeElementAt(i);\n      break;\n    }\n  }\n}\n"
+          },
+          {
+               "id": "636767781a6d9265ec018242",
+               "pos": 1,
+               "generate_code": "public int appendLoopOnAppenders(LoggingEvent event){\n    Enumeration enumeration = getAllAppenders();\n    while (enumeration.hasMoreElements()) {\n        Appender appender = (Appender) enumeration.nextElement();\n        appender.doAppend(event);\n    }\n    return 0;\n}",
+               "ground_true": "public int appendLoopOnAppenders(LoggingEvent event){\n  int size=0;\n  Appender appender;\n  if (appenderList != null) {\n    size=appenderList.size();\n    for (int i=0; i < size; i++) {\n      appender=(Appender)appenderList.elementAt(i);\n      appender.doAppend(event);\n    }\n  }\n  return size;\n}\n"
+          },
+          {
+               "id": "636767821a6d9265ec0183ab",
+               "pos": 1,
+               "generate_code": "public boolean hasThrown(){\n    return _thrown != null;\n}",
+               "ground_true": "public boolean hasThrown(){\n  Throwable thrown=getThrown();\n  if (thrown == null) {\n    return false;\n  }\n  String thrownString=thrown.toString();\n  return thrownString != null && thrownString.trim().length() != 0;\n}\n"
+          },
+          {
+               "id": "6367677e1a6d9265ec018314",
+               "pos": 6,
+               "generate_code": "protected int removeUnusedNodes(){\n    Enumeration<TreeNode> enumeration = _categoryModel.getRoot().children();\n    ArrayList<CategoryNode> toBeRemoved = new ArrayList<>();\n    while(enumeration.hasMoreElements()){\n        CategoryNode node = (CategoryNode)enumeration.nextElement();\n        if(!node.isActive()){\n            toBeRemoved.add(node);\n        }\n    }\n    for(CategoryNode node : toBeRemoved){\n        _categoryModel.removeNodeFromParent(node);\n    }\n    return toBeRemoved.size();\n}",
+               "ground_true": "protected int removeUnusedNodes(){\n  int count=0;\n  CategoryNode root=_categoryModel.getRootCategoryNode();\n  Enumeration enumeration=root.depthFirstEnumeration();\n  while (enumeration.hasMoreElements()) {\n    CategoryNode node=(CategoryNode)enumeration.nextElement();\n    if (node.isLeaf() && node.getNumberOfContainedRecords() == 0 && node.getParent() != null) {\n      _categoryModel.removeNodeFromParent(node);\n      count++;\n    }\n  }\n  return count;\n}\n"
+          },
+          {
+               "id": "636767841a6d9265ec0183f2",
+               "pos": 1,
+               "generate_code": "public int compare(Object aObj1,Object aObj2){\n    EventDetails event1 = (EventDetails)aObj1;\n    EventDetails event2 = (EventDetails)aObj2;\n    return event1.getTimeStamp().compareTo(event2.getTimeStamp());\n}",
+               "ground_true": "public int compare(Object aObj1,Object aObj2){\n  if ((aObj1 == null) && (aObj2 == null)) {\n    return 0;\n  }\n else   if (aObj1 == null) {\n    return -1;\n  }\n else   if (aObj2 == null) {\n    return 1;\n  }\n  final EventDetails le1=(EventDetails)aObj1;\n  final EventDetails le2=(EventDetails)aObj2;\n  if (le1.getTimeStamp() < le2.getTimeStamp()) {\n    return 1;\n  }\n  return -1;\n}\n"
+          },
+          {
+               "id": "636767df1a6d9265ec01873c",
+               "pos": 1,
+               "generate_code": "public String id(String entityId){\n    return point + Const.ID_CONNECTOR + entityId;\n}",
+               "ground_true": "public String id(String entityId){\n  if (entityId == null) {\n    return String.valueOf(point);\n  }\n else {\n    return point + Const.ID_CONNECTOR + entityId;\n  }\n}\n"
+          },
+          {
+               "id": "636767df1a6d9265ec018744",
+               "pos": 1,
+               "generate_code": "protected List<TimeRange> buildTimeRanges(long start,long end){\n    long duration = end - start;\n    if(duration <= FETCH_DATA_DURATION){\n        return Collections.singletonList(new TimeRange(start,end));\n    }\n    List<TimeRange> result = new ArrayList<>();\n    while(start < end){\n        long nextEnd = Math.min(start + FETCH_DATA_DURATION,end);\n        result.add(new TimeRange(start,nextEnd));\n        start = nextEnd;\n    }\n    return result;\n}",
+               "ground_true": "protected List<TimeRange> buildTimeRanges(long start,long end){\n  if (start >= end) {\n    return null;\n  }\n  end+=1;\n  final List<TimeRange> timeRanges=new ArrayList<>();\n  do {\n    long batchEnd=Math.min(start + FETCH_DATA_DURATION,end);\n    timeRanges.add(new TimeRange(start,batchEnd));\n    start=batchEnd;\n  }\n while (start < end);\n  return timeRanges;\n}\n"
+          },
+          {
+               "id": "636767e01a6d9265ec018755",
+               "pos": 3,
+               "generate_code": "private Map<String,Object> buildContent(JsonObject jsonObject){\n    Map<String,Object> content = new HashMap<>();\n    // TODO: Put the \"content\" from the jsonObject to the content.\n    return content;\n}",
+               "ground_true": "private Map<String,Object> buildContent(JsonObject jsonObject){\n  Map<String,Object> content=new HashMap<>();\n  content.put(\"msg_type\",jsonObject.get(\"msg_type\").getAsString());\n  if (jsonObject.get(\"ats\") != null) {\n    String ats=jsonObject.get(\"ats\").getAsString();\n    String text=jsonObject.get(\"content\").getAsJsonObject().get(\"text\").getAsString();\n    List<String> collect=Arrays.stream(ats.split(\",\")).map(String::trim).collect(Collectors.toList());\n    for (    String userId : collect) {\n      text+=\"<at user_id=\\\"\" + userId + \"\\\"></at>\";\n    }\n    jsonObject.get(\"content\").getAsJsonObject().addProperty(\"text\",text);\n  }\n  content.put(\"content\",jsonObject.get(\"content\").getAsJsonObject());\n  return content;\n}\n"
+          },
+          {
+               "id": "636767dc1a6d9265ec0186be",
+               "pos": 1,
+               "generate_code": "static long compressTimeBucket(long timeBucket,int dayStep){\n    DateTime dateTime = new DateTime(timeBucket,TIME_BUCKET_FORMATTER);\n    return compressDateTime(dateTime,dayStep).getMillis();\n}",
+               "ground_true": "static long compressTimeBucket(long timeBucket,int dayStep){\n  if (dayStep > 1) {\n    DateTime time=TIME_BUCKET_FORMATTER.parseDateTime(\"\" + timeBucket);\n    int days=Days.daysBetween(DAY_ONE,time).getDays();\n    int groupBucketOffset=days % dayStep;\n    return Long.parseLong(time.minusDays(groupBucketOffset).toString(TIME_BUCKET_FORMATTER));\n  }\n else {\n    return timeBucket;\n  }\n}\n"
+          },
+          {
+               "id": "636767dc1a6d9265ec0186c6",
+               "pos": 1,
+               "generate_code": "private boolean containsAllFields(Fields fields){\n    for (String fieldName : fields.getFieldNames()) {\n        if (!properties.containsKey(fieldName)) {\n            return false;\n        }\n    }\n    return true;\n}",
+               "ground_true": "private boolean containsAllFields(Fields fields){\n  if (this.properties.size() < fields.properties.size()) {\n    return false;\n  }\n  boolean isContains=fields.properties.entrySet().stream().allMatch(item -> Objects.equals(properties.get(item.getKey()),item.getValue()));\n  if (!isContains) {\n    return false;\n  }\n  return fields.source.getExcludes().containsAll(this.source.getExcludes());\n}\n"
+          },
+          {
+               "id": "636767dc1a6d9265ec0186cb",
+               "pos": 5,
+               "generate_code": "public void init(){\n    File dir = new File(analyzeResultDist);\n    if (!dir.exists()) {\n        dir.mkdirs();\n    }\n}",
+               "ground_true": "public void init(){\n  File dist=new File(analyzeResultDist);\n  if (!dist.exists()) {\n    dist.mkdirs();\n    return;\n  }\n  if (dist.isFile()) {\n    throw new IllegalArgumentException(analyzeResultDist + \" must be a directory\");\n  }\n}\n"
+          },
+          {
+               "id": "636767de1a6d9265ec018726",
+               "pos": 1,
+               "generate_code": "public List<SequenceRange> buildSequenceRanges(){\n    List<SequenceRange> sequenceRanges = new ArrayList<>();\n    for (int i = minSequence; i <= maxSequence; i += SEQUENCE_RANGE_BATCH_SIZE) {\n        int max = Math.min(i + SEQUENCE_RANGE_BATCH_SIZE - 1, maxSequence);\n        sequenceRanges.add(new SequenceRange(i, max));\n    }\n    return sequenceRanges;\n}",
+               "ground_true": "public List<SequenceRange> buildSequenceRanges(){\n  ArrayList<SequenceRange> ranges=new ArrayList<>();\n  do {\n    int batchMax=Math.min(minSequence + SEQUENCE_RANGE_BATCH_SIZE,maxSequence);\n    ranges.add(new SequenceRange(minSequence,batchMax));\n    minSequence=batchMax;\n  }\n while (minSequence < maxSequence);\n  return ranges;\n}\n"
+          },
+          {
+               "id": "636766aa1a6d9265ec0175ce",
+               "pos": 2,
+               "generate_code": "int visitFrameStart(final int offset,final int numLocal,final int numStack){\n    this.currentFrame=new int[numLocal+numStack];\n    Arrays.fill(this.currentFrame,-1);\n    this.previousFrame=this.currentFrame.clone();\n    this.lastBytecodeOffset=offset;\n    return 3;\n}",
+               "ground_true": "int visitFrameStart(final int offset,final int numLocal,final int numStack){\n  int frameLength=3 + numLocal + numStack;\n  if (currentFrame == null || currentFrame.length < frameLength) {\n    currentFrame=new int[frameLength];\n  }\n  currentFrame[0]=offset;\n  currentFrame[1]=numLocal;\n  currentFrame[2]=numStack;\n  return 3;\n}\n"
+          },
+          {
+               "id": "636766a91a6d9265ec0175c1",
+               "pos": 3,
+               "generate_code": "private void enlarge(final int size){\n    final byte[] newData = new byte[data.length + size];\n    System.arraycopy(data, 0, newData, 0, data.length);\n    data = newData;\n}",
+               "ground_true": "private void enlarge(final int size){\n  int doubleCapacity=2 * data.length;\n  int minimalCapacity=length + size;\n  byte[] newData=new byte[doubleCapacity > minimalCapacity ? doubleCapacity : minimalCapacity];\n  System.arraycopy(data,0,newData,0,length);\n  data=newData;\n}\n"
+          },
+          {
+               "id": "636766a91a6d9265ec0175c4",
+               "pos": 2,
+               "generate_code": "private void pop(final String descriptor){\n    char c = descriptor.charAt(0);\n    if(c == 'J' || c == 'D'){\n        pop(2);\n    }else{\n        pop(1);\n    }\n}",
+               "ground_true": "private void pop(final String descriptor){\n  char firstDescriptorChar=descriptor.charAt(0);\n  if (firstDescriptorChar == '(') {\n    pop((Type.getArgumentsAndReturnSizes(descriptor) >> 2) - 1);\n  }\n else   if (firstDescriptorChar == 'J' || firstDescriptorChar == 'D') {\n    pop(2);\n  }\n else {\n    pop(1);\n  }\n}\n"
+          },
+          {
+               "id": "636766a81a6d9265ec01758e",
+               "pos": 1,
+               "generate_code": "public static int nextPrime(int desiredCapacity){\n    return primeCapacities[desiredCapacity];\n}",
+               "ground_true": "public static int nextPrime(int desiredCapacity){\n  if (desiredCapacity >= largestPrime) {\n    return largestPrime;\n  }\n  int i=Arrays.binarySearch(primeCapacities,desiredCapacity);\n  if (i < 0) {\n    i=-i - 1;\n  }\n  return primeCapacities[i];\n}\n"
+          },
+          {
+               "id": "636767a41a6d9265ec018582",
+               "pos": 1,
+               "generate_code": "public static <T>int writeDelimitedTo(OutputStream out,T message,Schema<T> schema,LinkedBuffer buffer) throws IOException {\n    int size = ProtobufIOUtil.toByteArray(message,schema,buffer).length;\n    out.write(buffer.buffer(),0,size);\n    return size;\n}",
+               "ground_true": "public static <T>int writeDelimitedTo(OutputStream out,T message,Schema<T> schema,LinkedBuffer buffer) throws IOException {\n  if (buffer.start != buffer.offset)   throw new IllegalArgumentException(\"Buffer previously used and had not been reset.\");\n  final ProtobufOutput output=new ProtobufOutput(buffer);\n  schema.writeTo(output,message);\n  final int size=output.getSize();\n  ProtobufOutput.writeRawVarInt32Bytes(out,size);\n  final int msgSize=LinkedBuffer.writeTo(out,buffer);\n  assert size == msgSize;\n  return size;\n}\n"
+          },
+          {
+               "id": "636767a21a6d9265ec018517",
+               "pos": 7,
+               "generate_code": "public final byte[] toByteArray(){\n    if(size == 0){\n        return new byte[0];\n    }\n    byte[] result = new byte[size];\n    int pos = 0;\n    for(LinkedBuffer buffer = head;buffer != null;buffer = buffer.next){\n        System.arraycopy(buffer.buffer,buffer.offset,result,pos,buffer.length);\n        pos += buffer.length;\n    }\n    return result;\n}",
+               "ground_true": "public final byte[] toByteArray(){\n  LinkedBuffer node=head;\n  int offset=0, len;\n  final byte[] buf=new byte[size];\n  do {\n    if ((len=node.offset - node.start) > 0) {\n      System.arraycopy(node.buffer,node.start,buf,offset,len);\n      offset+=len;\n    }\n  }\n while ((node=node.next) != null);\n  return buf;\n}\n"
+          }
+     ]
+}
