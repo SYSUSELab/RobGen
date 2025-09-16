@@ -12,8 +12,6 @@ for model in ["Qwen2.5-Coder-1.5B-Instruct","Qwen2.5-Coder-7B-Instruct","deepsee
             ranking_dict[ranking]=1
     dict_list.append(ranking_dict)
 
-for dicts in dict_list:
-    print(dicts)
 
 dict1=dict_list[0]
 dict2=dict_list[1]
@@ -59,4 +57,4 @@ plt.xticks(index, categories)
 
 plt.legend()
 
-plt.show()
+plt.savefig("RQ4.pdf", format="pdf")
