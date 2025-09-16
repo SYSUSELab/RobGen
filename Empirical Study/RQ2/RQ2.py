@@ -16,7 +16,7 @@ class_dict={
 }
 fig, axs = plt.subplots(2,2, figsize=(36,16))
 
-datas=json.load(open("classification\Qwen2.5-Coder-1.5B-Instruct.json","r",encoding="utf-8"))["datas"]
+datas=json.load(open("classification/Qwen2.5-Coder-1.5B-Instruct.json","r",encoding="utf-8"))["datas"]
 result={}
 for i in range(1,10):
    result[i]=0
@@ -78,7 +78,7 @@ axs[0,0].set_xlabel('(a) Qwen2.5-Coder-1.5B', fontsize=20, fontweight='bold', st
 
 
 
-datas=json.load(open("classification\deepseek-coder-1.3b-instruct.json","r",encoding="utf-8"))["datas"]
+datas=json.load(open("classification/deepseek-coder-1.3b-instruct.json","r",encoding="utf-8"))["datas"]
 result={}
 for i in range(1,10):
    result[i]=0
@@ -132,7 +132,7 @@ axs[0,1].set_xlabel('(c) DeepseekCoder-1.3B', fontsize=20, fontweight='bold', st
 
 
 
-datas=json.load(open("classification\Qwen2.5-Coder-7B-Instruct.json","r",encoding="utf-8"))["datas"]
+datas=json.load(open("classification/Qwen2.5-Coder-7B-Instruct.json","r",encoding="utf-8"))["datas"]
 result={}
 for i in range(1,10):
    result[i]=0
@@ -183,7 +183,7 @@ axs[1,0].set_xlabel('(b) Qwen2.5-Coder-7B', fontsize=20, fontweight='bold', styl
 
 
 
-datas=json.load(open("classification\deepseek-coder-6.7b-instruct.json","r",encoding="utf-8"))["datas"]
+datas=json.load(open("classification/deepseek-coder-6.7b-instruct.json","r",encoding="utf-8"))["datas"]
 result={}
 for i in range(1,10):
    result[i]=0
