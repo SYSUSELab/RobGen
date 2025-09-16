@@ -53,4 +53,4 @@ plt.xticks(index, categories)
 
 plt.legend()
 
-plt.show()
+plt.savefig("RQ3.pdf", format="pdf")
