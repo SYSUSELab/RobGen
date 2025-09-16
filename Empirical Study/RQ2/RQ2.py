@@ -232,4 +232,4 @@ axs[1,1].set_xlabel('(d) DeepseekCoder-6.7B', fontsize=20, fontweight='bold', st
 
 
 plt.tight_layout()
-plt.show()
+plt.savefig("RQ2.pdf", format="pdf")
