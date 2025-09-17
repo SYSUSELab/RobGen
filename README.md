@@ -18,6 +18,11 @@ cd yourpath/RobGen/Framework
 ##If you want to use RobGen, run:
 python RobGen_generate.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct) --RobGen
 
+```
+#### Baseline
+```
+cd yourpath/RobGen/Framework
+
 ##If you want to use RobGen w/o Checker, run:
 python RobGen_generate.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct) --Adjust
 
@@ -29,7 +34,6 @@ python Robust_Coder_Prompt.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct)
 
 ##If you want to use Post_Generation_Insertion(PGI), run:
 python Post_Generation_Insertion.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct) 
-
 
 ```
 #### Empirical Study
