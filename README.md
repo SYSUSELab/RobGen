@@ -29,10 +29,10 @@ python RobGen_generate.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct) --Adj
 ##run w/o RobGen(Greedy Sampling):
 python RobGen_generate.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct)
 
-##If you want to use Robust_Coder_Prompt(RP), run:
+##run Robust_Coder_Prompt(RP):
 python Robust_Coder_Prompt.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct) 
 
-##If you want to use Post_Generation_Insertion(PGI), run:
+##run Post_Generation_Insertion(PGI):
 python Post_Generation_Insertion.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct) 
 
 ```
