@@ -60,7 +60,7 @@ contexts={data["_id"]:json.loads(data["all_context"])["class_level"] for data in
 
 
 
-write_jsonl(model_name+"_generate_RP.jsonl", "",append=False)
+write_jsonl(model_name.replace("/","-")+"_generate_RP.jsonl", "",append=False)
 for id in tqdm(contexts.keys()):
     input=input_data[id]
     context=contexts[id]
@@ -69,7 +69,7 @@ for id in tqdm(contexts.keys()):
     generate_result=clean(signature_data[id]+"\n"+generate_result)
     print(generate_result)
     sample=[dict(_id=id,generate_results=[generate_result])]
-    write_jsonl(model_name+"_generate_RP.jsonl", sample,append=True)
+    write_jsonl(model_name.replace("/","-")+"_generate_RP.jsonl", sample,append=True)
     
 
 
