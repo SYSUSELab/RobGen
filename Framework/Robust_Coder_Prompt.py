@@ -65,6 +65,7 @@ for id in tqdm(contexts.keys()):
     input=input_data[id]
     context=contexts[id]
     input=PROMPT.replace("<CONTEXT>", context).replace("<INPUT>",input)
+    print("-------------------------------------RP------------------------------------------")
     generate_result=generate_one_completion(input)
     generate_result=clean(signature_data[id]+"\n"+generate_result)
     sample=[dict(_id=id,generate_results=[generate_result])]

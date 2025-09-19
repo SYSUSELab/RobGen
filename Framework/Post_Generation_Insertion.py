@@ -91,6 +91,7 @@ for data in tqdm(datas["RECORDS"]) :
     input=input_data[id]
     context=contexts[id]
     signature_data=signature_datas[id]
+    print("-------------------------------------PGI------------------------------------------")
     generate_result=pipeline(model_name,tokenizer,model,context,signature_data,input)
     sample=[dict(_id=id,generate_results=generate_result)]
     write_jsonl(model_name.replace("/","-")+"_PGI.jsonl", sample,append=True)
