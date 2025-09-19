@@ -67,7 +67,6 @@ for id in tqdm(contexts.keys()):
     input=PROMPT.replace("<CONTEXT>", context).replace("<INPUT>",input)
     generate_result=generate_one_completion(input)
     generate_result=clean(signature_data[id]+"\n"+generate_result)
-    print(generate_result)
     sample=[dict(_id=id,generate_results=[generate_result])]
     write_jsonl(model_name.replace("/","-")+"_generate_RP.jsonl", sample,append=True)
     
