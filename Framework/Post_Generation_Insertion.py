@@ -79,12 +79,12 @@ print("model over")
 
 input_data={task["question_id"]: task["input"] for task in stream_jsonl("CEJavaHumanLabel.jsonl")}
 signature_datas={task["question_id"]: task["signature"] for task in stream_jsonl("CEJavaHumanLabel.jsonl")}
-datas = json.load(open("Pipeline/CoderEval4Java.json", encoding='utf-8'))
+datas = json.load(open("CoderEval4Java.json", encoding='utf-8'))
 contexts={data["_id"]:json.loads(data["all_context"])["class_level"] for data in datas["RECORDS"]}
 
 
 
-write_jsonl(model_name.replace("/","-")+"_PGI.jsonl", "")
+write_jsonl(model_name.replace("/","-")+"_PGI.jsonl", "",append=False)
 
 for data in tqdm(datas["RECORDS"]) :
     id=data["_id"]
@@ -93,4 +93,4 @@ for data in tqdm(datas["RECORDS"]) :
     signature_data=signature_datas[id]
     generate_result=pipeline(model_name,tokenizer,model,context,signature_data,input)
     sample=[dict(_id=id,generate_results=generate_result)]
-    write_jsonl(model_name.replace("/","-")+"_PGI.jsonl", "", sample,append=True)
+    write_jsonl(model_name.replace("/","-")+"_PGI.jsonl", sample,append=True)
