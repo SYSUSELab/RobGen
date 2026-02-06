@@ -22,5 +22,3 @@ for method in methods:
     print(f"method:{method} , avg score:{round(sum(scores)/len(scores),1)}")
     print("\n"+"-"*20)
 
-
-'''or data["generate_results"][0]["errormessage"]!="compile error"'''
