@@ -32,9 +32,11 @@ python RobGen_generate.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct)
 ##run Robust_Coder_Prompt(RP):
 python Robust_Coder_Prompt.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct) 
 
-##run Post_Generation_Insertion(PGI):
-python Post_Generation_Insertion.py model_name(e.g.Qwen/Qwen2.5-Coder-1.5B-Instruct) 
-
+```
+#### RobEval
+```
+##If you need to use RobEval, first create the CoderEval test container, place file RobEval.jsonl and file JavaExec_RobEval.py under the path /home/travis/builds/java , and then execute:
+python JavaExec_RobEval.py (codes_result_to_test.jsonl) 1 
 ```
 #### Empirical Study
 All data for the Empirical Study is stored in the ```Empirical Study``` directory.
