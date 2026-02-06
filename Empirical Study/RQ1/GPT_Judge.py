@@ -1,7 +1,8 @@
 from openai import OpenAI
 from tqdm import tqdm
 from util import stream_jsonl,write_jsonl
-prompt='''You are a software architecture expert. Please carefully evaluate and compare the robustness of the following {LANGUAGE} code A and B based on specific robustness criteria that are critical to practical software development and architectural design.
+prompt='''You are a senior software engineer with extensive experience in production systems.You specialize in evaluating and comparing code robustness, including error handling, edge cases, fault tolerance, and maintainability. 
+Please carefully evaluate and compare the robustness of the following {LANGUAGE} code A and B based on specific robustness criteria that are critical to practical software development and architectural design.
 Begin your assessment with a brief explanation that addresses the key factors listed below. Following your explanation, assign a rating to the codes on a scale from 1 to 5, where 1 indicates the code A has the lowest robustness than code B and 5 indicates the code A has the highest robustness than code B.3 indicates the code A's robustness equals to code B. Please adhere strictly to the following format for your rating: “Rating: [[X]]”, where X is your rating. 
 
 Criteria for Evaluation:
