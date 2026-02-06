@@ -1,3 +1,3 @@
 ### Notice
-1. The annotation results of the first occurrence of each pattern in the code lines are stored in JSON files within the ```Position``` directory, containing task IDs, code line positions, generated code, and reference code. 
-2. Running ```RQ3.py``` will display the distribution figure of the first occurrence positions of patterns in the code.
+1. The expected positions of ```if``` tokens and the ranking results of their first occurrence are stored in JSON files within the ```Ranking``` directory, containing task IDs, expected ```if``` token positions, ```if``` token rankings, generated code, and reference code. 
+2. Running ```RQ3.py``` will display the distribution chart of if token rankings.
